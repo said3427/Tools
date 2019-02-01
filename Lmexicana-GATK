@@ -1,0 +1,988 @@
+############################################################
+## GATK variant calling in 10 Leishmania mexicana isolates #
+############################################################
+
+export PATH=/home/iimaz/Tools/samtools-0.1.19:$PATH
+
+###########################################################
+### PRE-PROCESSING ######
+#
+# Starting from BWA mapped and sorted bam files
+###########################################################
+
+#############################
+### Add or replace groups ###
+#############################
+cd /mnt/a/Leishmania/Leishmania_mex/Genomes/Project_DNA_Library_CRE_HMO/Concatenated_Fastq/
+
+java -jar /home/iimaz/Tools/picard.jar AddOrReplaceReadGroups \
+INPUT= S11.unique_bwa.mapped.sorted.bam \
+VALIDATION_STRINGENCY=SILENT \
+SO=coordinate \
+CREATE_INDEX=true \
+ID=Sample11 \
+LB=Sample11 \
+SM=Sample11 \
+PL=Illumina \
+PU=Sample11 \
+OUTPUT= S11.bwa.sorted.rg.bam
+
+java -jar /home/iimaz/Tools/picard.jar AddOrReplaceReadGroups \
+INPUT= S14.unique_bwa.mapped.sorted.bam \
+VALIDATION_STRINGENCY=SILENT \
+SO=coordinate \
+CREATE_INDEX=true \
+ID=Sample14 \
+LB=Sample14 \
+SM=Sample14 \
+PL=Illumina \
+PU=Sample14 \
+OUTPUT= S14.bwa.sorted.rg.bam
+
+java -jar /home/iimaz/Tools/picard.jar AddOrReplaceReadGroups \
+INPUT= S17.unique_bwa.mapped.sorted.bam \
+VALIDATION_STRINGENCY=SILENT \
+SO=coordinate \
+CREATE_INDEX=true \
+ID=Sample17 \
+LB=Sample17 \
+SM=Sample17 \
+PL=Illumina \
+PU=Sample17 \
+OUTPUT= S17.bwa.sorted.rg.bam
+
+java -jar /home/iimaz/Tools/picard.jar AddOrReplaceReadGroups \
+INPUT= S2.unique_bwa.mapped.sorted.bam \
+VALIDATION_STRINGENCY=SILENT \
+SO=coordinate \
+CREATE_INDEX=true \
+ID=Sample2 \
+LB=Sample2 \
+SM=Sample2 \
+PL=Illumina \
+PU=Sample2 \
+OUTPUT= S2.bwa.sorted.rg.bam
+
+java -jar /home/iimaz/Tools/picard.jar AddOrReplaceReadGroups \
+INPUT= S3.unique_bwa.mapped.sorted.bam \
+VALIDATION_STRINGENCY=SILENT \
+SO=coordinate \
+CREATE_INDEX=true \
+ID=Sample3 \
+LB=Sample3 \
+SM=Sample3 \
+PL=Illumina \
+PU=Sample3 \
+OUTPUT= S3.bwa.sorted.rg.bam
+
+java -jar /home/iimaz/Tools/picard.jar AddOrReplaceReadGroups \
+INPUT= S5.unique_bwa.mapped.sorted.bam \
+VALIDATION_STRINGENCY=SILENT \
+SO=coordinate \
+CREATE_INDEX=true \
+ID=Sample5 \
+LB=Sample5 \
+SM=Sample5 \
+PL=Illumina \
+PU=Sample5 \
+OUTPUT= S5.bwa.sorted.rg.bam
+
+java -jar /home/iimaz/Tools/picard.jar AddOrReplaceReadGroups \
+INPUT= S6.unique_bwa.mapped.sorted.bam \
+VALIDATION_STRINGENCY=SILENT \
+SO=coordinate \
+CREATE_INDEX=true \
+ID=Sample6 \
+LB=Sample6 \
+SM=Sample6 \
+PL=Illumina \
+PU=Sample6 \
+OUTPUT= S6.bwa.sorted.rg.bam
+
+java -jar /home/iimaz/Tools/picard.jar AddOrReplaceReadGroups \
+INPUT= S7.unique_bwa.mapped.sorted.bam \
+VALIDATION_STRINGENCY=SILENT \
+SO=coordinate \
+CREATE_INDEX=true \
+ID=Sample7 \
+LB=Sample7 \
+SM=Sample7 \
+PL=Illumina \
+PU=Sample7 \
+OUTPUT= S7.bwa.sorted.rg.bam
+
+java -jar /home/iimaz/Tools/picard.jar AddOrReplaceReadGroups \
+INPUT= S9.unique_bwa.mapped.sorted.bam \
+VALIDATION_STRINGENCY=SILENT \
+SO=coordinate \
+CREATE_INDEX=true \
+ID=Sample9 \
+LB=Sample9 \
+SM=Sample9 \
+PL=Illumina \
+PU=Sample9 \
+OUTPUT= S9.bwa.sorted.rg.bam
+
+java -jar /home/iimaz/Tools/picard.jar AddOrReplaceReadGroups \
+INPUT= S23.unique_bwa.mapped.sorted.bam \
+VALIDATION_STRINGENCY=SILENT \
+SO=coordinate \
+CREATE_INDEX=true \
+ID=Sample23 \
+LB=Sample23 \
+SM=Sample23 \
+PL=Illumina \
+PU=Sample23 \
+OUTPUT= S23.bwa.sorted.rg.bam
+
+
+###########################
+### Marking duplicates ####
+###########################
+
+java -jar /home/iimaz/Tools/picard.jar MarkDuplicates \
+INPUT= S11.bwa.sorted.rg.bam \
+OUTPUT= S11.bwa.sorted.rg.mdup.bam \
+METRICS_FILE= S11.pcrduplicates.metrics \
+VALIDATION_STRINGENCY=LENIENT \
+CREATE_INDEX=true \
+ASSUME_SORTED=true \
+READ_NAME_REGEX=null \
+MAX_RECORDS_IN_RAM=8000000
+
+java -jar /home/iimaz/Tools/picard.jar MarkDuplicates \
+INPUT= S14.bwa.sorted.rg.bam \
+OUTPUT= S14.bwa.sorted.rg.mdup.bam \
+METRICS_FILE= S14.pcrduplicates.metrics \
+VALIDATION_STRINGENCY=LENIENT \
+CREATE_INDEX=true \
+ASSUME_SORTED=true \
+READ_NAME_REGEX=null \
+MAX_RECORDS_IN_RAM=8000000
+
+java -jar /home/iimaz/Tools/picard.jar MarkDuplicates \
+INPUT= S17.bwa.sorted.rg.bam \
+OUTPUT= S17.bwa.sorted.rg.mdup.bam \
+METRICS_FILE= S17.pcrduplicates.metrics \
+VALIDATION_STRINGENCY=LENIENT \
+CREATE_INDEX=true \
+ASSUME_SORTED=true \
+READ_NAME_REGEX=null \
+MAX_RECORDS_IN_RAM=8000000
+
+java -jar /home/iimaz/Tools/picard.jar MarkDuplicates \
+INPUT= S2.bwa.sorted.rg.bam \
+OUTPUT= S2.bwa.sorted.rg.mdup.bam \
+METRICS_FILE= S2.pcrduplicates.metrics \
+VALIDATION_STRINGENCY=LENIENT \
+CREATE_INDEX=true \
+ASSUME_SORTED=true \
+READ_NAME_REGEX=null \
+MAX_RECORDS_IN_RAM=8000000
+
+java -jar /home/iimaz/Tools/picard.jar MarkDuplicates \
+INPUT= S3.bwa.sorted.rg.bam \
+OUTPUT= S3.bwa.sorted.rg.mdup.bam \
+METRICS_FILE= S3.pcrduplicates.metrics \
+VALIDATION_STRINGENCY=LENIENT \
+CREATE_INDEX=true \
+ASSUME_SORTED=true \
+READ_NAME_REGEX=null \
+MAX_RECORDS_IN_RAM=8000000
+
+java -jar /home/iimaz/Tools/picard.jar MarkDuplicates \
+INPUT= S5.bwa.sorted.rg.bam \
+OUTPUT= S5.bwa.sorted.rg.mdup.bam \
+METRICS_FILE= S5.pcrduplicates.metrics \
+VALIDATION_STRINGENCY=LENIENT \
+CREATE_INDEX=true \
+ASSUME_SORTED=true \
+READ_NAME_REGEX=null \
+MAX_RECORDS_IN_RAM=8000000
+
+java -jar /home/iimaz/Tools/picard.jar MarkDuplicates \
+INPUT= S6.bwa.sorted.rg.bam \
+OUTPUT= S6.bwa.sorted.rg.mdup.bam \
+METRICS_FILE= S6.pcrduplicates.metrics \
+VALIDATION_STRINGENCY=LENIENT \
+CREATE_INDEX=true \
+ASSUME_SORTED=true \
+READ_NAME_REGEX=null \
+MAX_RECORDS_IN_RAM=8000000
+
+java -jar /home/iimaz/Tools/picard.jar MarkDuplicates \
+INPUT= S7.bwa.sorted.rg.bam \
+OUTPUT= S7.bwa.sorted.rg.mdup.bam \
+METRICS_FILE= S7.pcrduplicates.metrics \
+VALIDATION_STRINGENCY=LENIENT \
+CREATE_INDEX=true \
+ASSUME_SORTED=true \
+READ_NAME_REGEX=null \
+MAX_RECORDS_IN_RAM=8000000
+
+java -jar /home/iimaz/Tools/picard.jar MarkDuplicates \
+INPUT= S9.bwa.sorted.rg.bam \
+OUTPUT= S9.bwa.sorted.rg.mdup.bam \
+METRICS_FILE= S9.pcrduplicates.metrics \
+VALIDATION_STRINGENCY=LENIENT \
+CREATE_INDEX=true \
+ASSUME_SORTED=true \
+READ_NAME_REGEX=null \
+MAX_RECORDS_IN_RAM=8000000
+
+java -jar /home/iimaz/Tools/picard.jar MarkDuplicates \
+INPUT= S23.bwa.sorted.rg.bam \
+OUTPUT= S23.bwa.sorted.rg.mdup.bam \
+METRICS_FILE= S23.pcrduplicates.metrics \
+VALIDATION_STRINGENCY=LENIENT \
+CREATE_INDEX=true \
+ASSUME_SORTED=true \
+READ_NAME_REGEX=null \
+MAX_RECORDS_IN_RAM=8000000
+
+rm *rg.bai
+rm *rg.bam
+
+##################################################################
+## Set up fasta file to use as reference in GATK analysis ########
+
+# Create fasta reference index
+cd /mnt/a/Leishmania/Genomes/
+samtools faidx LeishmaniamexicanaAllstrains.fasta
+
+# Create a dict file
+java -jar /home/iimaz/Tools/picard.jar CreateSequenceDictionary \
+R=/mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+O=/mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.dict
+
+##############################
+## Coverage across samples ####
+nohup java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -T DepthOfCoverage \
+   -o CoverageAnalysis \
+   -I sample.list > depthofCoverage.log &
+
+#####################################
+#### GENOTYPING First Round #########
+#####################################
+#
+# Deprecated
+#
+
+## Unified Genotyper ##
+#nohup java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+#   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+#   -T UnifiedGenotyper \
+#   -I sample.list \
+#   -o leishmaniam.raw.vcf \
+#   -ploidy 2 \
+#   --output_mode EMIT_VARIANTS_ONLY \
+#   -stand_call_conf 30.0 \ https://gatkforums.broadinstitute.org/gatk/discussion/comment/36184
+#   -stand_emit_conf 30.0 \
+#   --genotype_likelihoods_model SNP \
+#   --max_alternate_alleles 15 \ depecrated: read http://gatkforums.broadinstitute.org/gatk/discussion/8692/version-highlights-for-gatk-version-3-7
+#   -nct 28 > ugenot.log &
+
+
+####################################
+#### Haplotype Caller ##############
+####    Multisample   ##############     
+# https://software.broadinstitute.org/gatk/documentation/tooldocs/current/org_broadinstitute_gatk_tools_walkers_haplotypecaller_HaplotypeCaller.php
+####################################
+
+nohup java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+     -T HaplotypeCaller \
+     -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+     -I sample.list \
+     -ploidy 2 \
+     --output_mode EMIT_VARIANTS_ONLY \
+     -o leishmaniam.raw.snps.indels.vcf > Hapcaller.log &
+     
+nohup java -Xmx100g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+     -T HaplotypeCaller \
+     -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+     -I sample.list \
+     -ploidy 2 \
+     -stand_call_conf 30 \
+     -maxAltAlleles 15 \
+     --output_mode EMIT_VARIANTS_ONLY \
+     -o leishmaniam.raw.snps.indels.phred30.vcf > Hapcaller.ph30.log &     
+
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+	-T SelectVariants \
+	-R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+	-V leishmaniam.raw.snps.indels.vcf \
+	-selectType SNP \
+	-o leishmaniam.raw_snps.vcf
+
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+	-T SelectVariants \
+	-R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+	-V leishmaniam.raw.snps.indels.vcf \
+	-selectType INDEL \
+	-o leishmaniam.raw_indels.vcf
+
+#######################
+### Hard filtering #### 
+#######################
+                 
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+	-T VariantFiltration \
+	-R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+	-V leishmaniam.raw_snps.vcf \
+	--filterExpression "QD < 2.0 || FS > 60.0 || MQ < 40.0" \
+	--filterName "my_snp_filter" \
+	 -o filtered_snps.vcf
+
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+	-T VariantFiltration \
+	-R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+	-V leishmaniam.raw_indels.vcf \
+	--filterExpression "QD < 2.0 || FS > 60.0" \
+	--filterName "my_indel_filter" \
+	 -o filtered_indels.vcf
+
+########################################################
+## Base recalibration and Indel realignment per sample #
+
+# Sample 14
+### Base quality score recalibration         
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T BaseRecalibrator \
+   -I S14.bwa.sorted.rg.bam \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -knownSites filtered_snps.vcf \
+   -knownSites filtered_indels.vcf \
+   -o recal_S14.table
+
+java -jar -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T PrintReads \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S14.bwa.sorted.rg.bam \
+   -BQSR recal_S14.table \
+   -o S14.bqsr.bam
+   
+### Local realignment around indels 
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+  -T RealignerTargetCreator \
+  -I S14.bqsr.bam \
+  -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+  -o S14.bqsr.intervals 
+  
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T IndelRealigner \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S14.bqsr.bam \
+   -targetIntervals S14.bqsr.intervals \
+   -known leishmaniam.raw_indels.vcf \
+   -o S14.bqsr.ir.bam
+
+# Sample 6
+### Base quality score recalibration         
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T BaseRecalibrator \
+   -I S6.bwa.sorted.rg.bam \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -knownSites filtered_snps.vcf \
+   -knownSites filtered_indels.vcf \
+   -o recal_S6.table
+
+java -jar -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T PrintReads \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S6.bwa.sorted.rg.bam \
+   -BQSR recal_S6.table \
+   -o S6.bqsr.bam
+
+### Local realignment around indels 
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+  -T RealignerTargetCreator \
+  -I S6.bqsr.bam \
+  -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+  -o S6.bqsr.intervals 
+
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T IndelRealigner \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S6.bqsr.bam \
+   -targetIntervals S6.bqsr.intervals \
+   -known leishmaniam.raw_indels.vcf \
+   -o S6.bqsr.ir.bam
+
+# Sample 7
+### Base quality score recalibration         
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T BaseRecalibrator \
+   -I S7.bwa.sorted.rg.bam \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -knownSites filtered_snps.vcf \
+   -knownSites filtered_indels.vcf \
+   -o recal_S7.table
+
+java -jar -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T PrintReads \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S7.bwa.sorted.rg.bam \
+   -BQSR recal_S7.table \
+   -o S7.bqsr.bam
+
+### Local realignment around indels 
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+  -T RealignerTargetCreator \
+  -I S7.bqsr.bam \
+  -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+  -o S7.bqsr.intervals 
+  
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T IndelRealigner \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S7.bqsr.bam \
+   -targetIntervals S7.bqsr.intervals \
+   -known leishmaniam.raw_indels.vcf \
+   -o S7.bqsr.ir.bam
+
+# Sample 5
+### Base quality score recalibration         
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T BaseRecalibrator \
+   -I S5.bwa.sorted.rg.bam \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -knownSites filtered_snps.vcf \
+   -knownSites filtered_indels.vcf \
+   -o recal_S5.table
+
+java -jar -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T PrintReads \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S5.bwa.sorted.rg.bam \
+   -BQSR recal_S5.table \
+   -o S5.bqsr.bam
+
+### Local realignment around indels 
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+  -T RealignerTargetCreator \
+  -I S5.bqsr.bam \
+  -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+  -o S5.bqsr.intervals 
+  
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T IndelRealigner \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S5.bqsr.bam \
+   -targetIntervals S5.bqsr.intervals \
+   -known leishmaniam.raw_indels.vcf \
+   -o S5.bqsr.ir.bam
+
+# Sample 9
+### Base quality score recalibration         
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T BaseRecalibrator \
+   -I S9.bwa.sorted.rg.bam \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -knownSites filtered_snps.vcf \
+   -knownSites filtered_indels.vcf \
+   -o recal_S9.table
+
+java -jar -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T PrintReads \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S9.bwa.sorted.rg.bam \
+   -BQSR recal_S9.table \
+   -o S9.bqsr.bam
+
+### Local realignment around indels 
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+  -T RealignerTargetCreator \
+  -I S9.bqsr.bam \
+  -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+  -o S9.bqsr.intervals 
+  
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T IndelRealigner \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S9.bqsr.bam \
+   -targetIntervals S9.bqsr.intervals \
+   -known leishmaniam.raw_indels.vcf \
+   -o S9.bqsr.ir.bam
+   
+# Sample 23
+### Base quality score recalibration         
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T BaseRecalibrator \
+   -I S23.bwa.sorted.rg.bam \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -knownSites filtered_snps.vcf \
+   -knownSites filtered_indels.vcf \
+   -o recal_S23.table
+
+java -jar -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T PrintReads \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S23.bwa.sorted.rg.bam \
+   -BQSR recal_S23.table \
+   -o S23.bqsr.bam
+
+### Local realignment around indels 
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+  -T RealignerTargetCreator \
+  -I S23.bqsr.bam \
+  -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+  -o S23.bqsr.intervals 
+  
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T IndelRealigner \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S23.bqsr.bam \
+   -targetIntervals S23.bqsr.intervals \
+   -known leishmaniam.raw_indels.vcf \
+   -o S23.bqsr.ir.bam
+
+# Sample 3
+### Base quality score recalibration         
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T BaseRecalibrator \
+   -I S3.bwa.sorted.rg.bam \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -knownSites filtered_snps.vcf \
+   -knownSites filtered_indels.vcf \
+   -o recal_S3.table
+
+java -jar -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T PrintReads \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S3.bwa.sorted.rg.bam \
+   -BQSR recal_S3.table \
+   -o S3.bqsr.bam
+
+### Local realignment around indels 
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+  -T RealignerTargetCreator \
+  -I S3.bqsr.bam \
+  -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+  -o S3.bqsr.intervals 
+  
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T IndelRealigner \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S3.bqsr.bam \
+   -targetIntervals S3.bqsr.intervals \
+   -known leishmaniam.raw_indels.vcf \
+   -o S3.bqsr.ir.bam
+   
+# Sample 2
+### Base quality score recalibration         
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T BaseRecalibrator \
+   -I S2.bwa.sorted.rg.bam \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -knownSites filtered_snps.vcf \
+   -knownSites filtered_indels.vcf \
+   -o recal_S2.table
+
+java -jar -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T PrintReads \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S2.bwa.sorted.rg.bam \
+   -BQSR recal_S2.table \
+   -o S2.bqsr.bam
+
+### Local realignment around indels 
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+  -T RealignerTargetCreator \
+  -I S2.bqsr.bam \
+  -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+  -o S2.bqsr.intervals 
+  
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T IndelRealigner \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S2.bqsr.bam \
+   -targetIntervals S2.bqsr.intervals \
+   -known leishmaniam.raw_indels.vcf \
+   -o S2.bqsr.ir.bam
+
+# Sample 17
+### Base quality score recalibration         
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T BaseRecalibrator \
+   -I S17.bwa.sorted.rg.bam \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta  \
+   -knownSites filtered_snps.vcf \
+   -knownSites filtered_indels.vcf \
+   -o recal_S17.table
+
+java -jar -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T PrintReads \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S17.bwa.sorted.rg.bam \
+   -BQSR recal_S17.table \
+   -o S17.bqsr.bam
+
+### Local realignment around indels 
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+  -T RealignerTargetCreator \
+  -I S17.bqsr.bam \
+  -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+  -o S17.bqsr.intervals 
+  
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T IndelRealigner \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S17.bqsr.bam \
+   -targetIntervals S17.bqsr.intervals \
+   -known leishmaniam.raw_indels.vcf \
+   -o S17.bqsr.ir.bam
+
+# Sample 11
+### Base quality score recalibration         
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T BaseRecalibrator \
+   -I S11.bwa.sorted.rg.bam \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -knownSites filtered_snps.vcf \
+   -knownSites filtered_indels.vcf \
+   -o recal_S11.table
+
+java -jar -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T PrintReads \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S11.bwa.sorted.rg.bam \
+   -BQSR recal_S17.table \
+   -o S11.bqsr.bam
+
+### Local realignment around indels 
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+  -T RealignerTargetCreator \
+  -I S11.bqsr.bam \
+  -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+  -o S11.bqsr.intervals 
+  
+java -jar -Xmx50g /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T IndelRealigner \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -I S11.bqsr.bam \
+   -targetIntervals S11.bqsr.intervals \
+   -known leishmaniam.raw_indels.vcf \
+   -o S11.bqsr.ir.bam
+
+######################################
+### Re-run on recalibrated bam files #
+### Haplotype Caller per sample   ####
+######################################
+
+nohup java -Xmx100g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+     -T HaplotypeCaller \
+     -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+     -I S14.bqsr.ir.bam \
+     -ploidy 2 \
+	 --emitRefConfidence GVCF \
+	 --variant_index_type LINEAR \
+	 --variant_index_parameter 128000 \
+	 -maxAltAlleles 15 \
+     -o S14.leishmaniam.raw.snps.indels.vcf > Hapcaller.s14.log & 
+
+nohup java -Xmx100g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+     -T HaplotypeCaller \
+     -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+     -I S6.bqsr.ir.bam \
+     -ploidy 2 \
+	 --emitRefConfidence GVCF \
+	 --variant_index_type LINEAR \
+	 --variant_index_parameter 128000 \
+	 -maxAltAlleles 15 \
+     -o S6.leishmaniam.raw.snps.indels.vcf > Hapcaller.s6.log & 
+
+nohup java -Xmx100g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+     -T HaplotypeCaller \
+     -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+     -I S7.bqsr.ir.bam \
+     -ploidy 2 \
+	 --emitRefConfidence GVCF \
+	 --variant_index_type LINEAR \
+	 --variant_index_parameter 128000 \
+	 -maxAltAlleles 15 \
+     -o S7.leishmaniam.raw.snps.indels.vcf > Hapcaller.s7.log & 
+
+nohup java -Xmx100g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+     -T HaplotypeCaller \
+     -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+     -I S5.bqsr.ir.bam \
+     -ploidy 2 \
+	 --emitRefConfidence GVCF \
+	 --variant_index_type LINEAR \
+	 --variant_index_parameter 128000 \
+	 -maxAltAlleles 15 \
+     -o S5.leishmaniam.raw.snps.indels.vcf > Hapcaller.s5.log & 
+
+nohup java -Xmx100g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+     -T HaplotypeCaller \
+     -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+     -I S9.bqsr.ir.bam \
+     -ploidy 2 \
+	 --emitRefConfidence GVCF \
+	 --variant_index_type LINEAR \
+	 --variant_index_parameter 128000 \
+	 -maxAltAlleles 15 \
+     -o S9.leishmaniam.raw.snps.indels.vcf > Hapcaller.s9.log & 
+
+nohup java -Xmx100g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+     -T HaplotypeCaller \
+     -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+     -I S17.bqsr.ir.bam \
+     -ploidy 2 \
+	 --emitRefConfidence GVCF \
+	 --variant_index_type LINEAR \
+	 --variant_index_parameter 128000 \
+	 -maxAltAlleles 15 \
+     -o S17.leishmaniam.raw.snps.indels.vcf > Hapcaller.s17.log & 
+
+nohup java -Xmx100g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+     -T HaplotypeCaller \
+     -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+     -I S2.bqsr.ir.bam \
+     -ploidy 2 \
+	 --emitRefConfidence GVCF \
+	 --variant_index_type LINEAR \
+	 --variant_index_parameter 128000 \
+	 -maxAltAlleles 15 \
+     -o S2.leishmaniam.raw.snps.indels.vcf > Hapcaller.s2.log & 
+
+nohup java -Xmx100g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+     -T HaplotypeCaller \
+     -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+     -I S3.bqsr.ir.bam \
+     -ploidy 2 \
+	 --emitRefConfidence GVCF \
+	 --variant_index_type LINEAR \
+	 --variant_index_parameter 128000 \
+	 -maxAltAlleles 15 \
+     -o S3.leishmaniam.raw.snps.indels.vcf > Hapcaller.s3.log & 
+
+nohup java -Xmx100g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+     -T HaplotypeCaller \
+     -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+     -I S11.bqsr.ir.bam \
+     -ploidy 2 \
+	 --emitRefConfidence GVCF \
+	 --variant_index_type LINEAR \
+	 --variant_index_parameter 128000 \
+	 -maxAltAlleles 15 \
+     -o S11.leishmaniam.raw.snps.indels.vcf > Hapcaller.s11.log & 
+
+nohup java -Xmx100g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+     -T HaplotypeCaller \
+     -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+     -I S23.bqsr.ir.bam \
+     -ploidy 2 \
+	 --emitRefConfidence GVCF \
+	 --variant_index_type LINEAR \
+	 --variant_index_parameter 128000 \
+	 -maxAltAlleles 15 \
+     -o S23.leishmaniam.raw.snps.indels.vcf > Hapcaller.s23.log & 
+
+nohup java -Xmx100g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T GenotypeGVCFs \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   --variant S14.leishmaniam.raw.snps.indels.vcf  \
+   --variant S6.leishmaniam.raw.snps.indels.vcf  \
+   --variant S7.leishmaniam.raw.snps.indels.vcf  \
+   --variant S5.leishmaniam.raw.snps.indels.vcf  \
+   --variant S9.leishmaniam.raw.snps.indels.vcf  \
+   --variant S23.leishmaniam.raw.snps.indels.vcf  \
+   --variant S2.leishmaniam.raw.snps.indels.vcf  \
+   --variant S3.leishmaniam.raw.snps.indels.vcf  \
+   --variant S17.leishmaniam.raw.snps.indels.vcf  \
+   --variant S11.leishmaniam.raw.snps.indels.vcf  \
+   --max_alternate_alleles 17 \
+   -o output_gvcfmode.vcf > JointGenotyping.log & 
+   
+   
+#nohup java -Xmx50g -jar /home/iimaz/Tools/GATK/GenomeAnalysisTK.jar \
+#     -T HaplotypeCaller \
+#     -R ~/Resources/Lmx_inmegen_assembly_v2/leishmaniamexicana.fasta \
+#     -I sample.cleaned.list \
+#     -ploidy 2 \
+#     --output_mode EMIT_VARIANTS_ONLY \
+#     -stand_call_conf 30 \
+#     -stand_emit_conf 10 \
+#     --max_alternate_alleles 15 \
+#     -o leishmaniam.raw.snps.indels.vcf > Hapcaller.log &
+
+#nohup java -Xmx50g -jar /home/iimaz/Tools/GATK/GenomeAnalysisTK.jar \
+#     -T HaplotypeCaller \
+#     -R ~/Resources/Lmx_inmegen_assembly_v2/leishmaniamexicana.fasta \
+#     -I sample.cleaned.list \
+#     -ploidy 2 \
+#     --output_mode EMIT_VARIANTS_ONLY \
+#     -stand_call_conf 30 \
+#     -stand_emit_conf 30 \
+#     --max_alternate_alleles 15 \
+#     -o leishmaniam.raw.snps.indels.hf.vcf > Hapcaller.log &
+
+#java -Xmx50g -jar /home/iimaz/Tools/GATK/GenomeAnalysisTK.jar \
+#	-T SelectVariants \
+#	-R ~/Resources/Lmx_inmegen_assembly_v2/leishmaniamexicana.fasta \
+#	-V leishmaniam.raw.snps.indels.hf.vcf \
+#	-selectType SNP \
+#	-o leishmaniam.raw_snps.hf.vcf
+
+#java -Xmx50g -jar /home/iimaz/Tools/GATK/GenomeAnalysisTK.jar \
+#	-T SelectVariants \
+#	-R ~/Resources/Lmx_inmegen_assembly_v2/leishmaniamexicana.fasta \
+#	-V leishmaniam.raw.snps.indels.hf.vcf \
+#	-selectType INDEL \
+#	-o leishmaniam.raw_indels.hf.vcf
+
+#############################
+#### Second hard filters ####
+#############################     
+#java -Xmx50g -jar /home/iimaz/Tools/GATK/GenomeAnalysisTK.jar \
+#	-T VariantFiltration \
+#	-R ~/Resources/Lmx_inmegen_assembly_v2/leishmaniamexicana.fasta \
+#	-V leishmaniam.raw_snps.hf.vcf \
+#	--filterExpression "QD < 2.0 || FS > 60.0 || MQ < 40.0" \
+#	--filterName "my_snp_filter" \
+#	 -o filtered_snps.hf.vcf
+
+#java -Xmx50g -jar /home/iimaz/Tools/GATK/GenomeAnalysisTK.jar \
+#	-T VariantFiltration \
+#	-R ~/Resources/Lmx_inmegen_assembly_v2/leishmaniamexicana.fasta \
+#	-V leishmaniam.raw_indels.hf.vcf \
+#	--filterExpression "QD < 2.0 || FS > 60.0" \
+#	--filterName "my_indel_filter" \
+#	 -o filtered_indels.hf.vcf
+
+#####################################
+### Variant quality recalibration ###
+nohup java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T VariantRecalibrator \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -input output_gvcfmode.vcf \
+   -resource:snphf,known=false,training=true,truth=true,prior=15.0 filtered_snps.vcf \
+   -resource:indelhf,known=false,training=true,truth=true,prior=12.0 filtered_indels.vcf \
+   -an QD -an MQRankSum -an ReadPosRankSum -an FS -an MQ -an InbreedingCoeff \
+   -mode BOTH \
+   -recalFile leishmania.recal \
+   -tranchesFile leishmania.tranches \
+   -rscriptFile leishmania.plots.R \
+   -nt 25 > recal.log &
+
+java -Xmx50g -jar /home/iimaz/Tools/GenomeAnalysisTK.jar \
+   -T ApplyRecalibration \
+   -R /mnt/a/Leishmania/Genomes/LeishmaniamexicanaAllstrains.fasta \
+   -input output_gvcfmode.vcf \
+   --ts_filter_level 99.0 \
+   -tranchesFile leishmania.tranches \
+   -recalFile leishmania.recal \
+   -mode BOTH \
+   -o leishmaniam.recalibrated.filtered.vcf
+
+#############################################################################
+##############################
+# Coverage across DNA samples ####
+nohup java -Xmx50g -jar /home/iimaz/Tools/GATK/GenomeAnalysisTK.jar \
+   -R /home/iimaz/Resources/Lmx_inmegen_assembly_v2/leishmaniamexicana.fasta \
+   -T DepthOfCoverage \
+   -o CoverageAnalysis \
+   -I sample.cleaned.rmS23.list > depthofCoverage.log &
+
+#############################################################################
+
+
+
+#virtualenv Main
+#source Main/bin/activate
+#pip install PyVCF
+
+import vcf
+vcf_reader = vcf.Reader(open('leishmaniam.raw.vcf', 'r'))
+
+myfile = open('Zigosity.txt', 'w')
+for record in vcf_reader:
+	myfile.write("%s %s %s %s \n" % (record.CHROM, record.num_hom_ref, record.num_het, record.num_hom_alt))
+	print record.CHROM, record.num_hom_ref, record.num_het, record.num_hom_alt
+	
+myfile.close()
+
+myfile = open('BaseFreq.txt', 'w')
+for record in vcf_reader:
+	myfile.write("%s %s \n" % (record.CHROM, record.INFO['AF']))
+	print record.CHROM, record.INFO['AF']
+	
+myfile.close()
+
+
+vcf_reader = vcf.Reader(open('leishmaniam.raw.both.vcf', 'r'))
+
+myfile = open('VariantType.txt', 'w')
+for record in vcf_reader:
+	myfile.write("%s %s %s \n" % (record.CHROM, record.var_type, record.var_subtype))
+	print record.CHROM, record.var_type, record.var_subtype
+	
+myfile.close()
+
+vcf_reader = vcf.Reader(open('leishmaniam.raw.vcf', 'r'))
+record = vcf_reader.next()
+
+print record.POS
+24
+print record.ALT
+[T]
+print record.INFO['AF']
+[0.375]
+
+print record.num_called, record.call_rate, record.num_unknown
+4 0.4 6
+
+print record.CHROM, record.num_hom_ref, record.num_het, record.num_hom_alt
+chr01_bb 2 1 1
+
+print record.get_hets()
+[Call(sample=Sample2, CallData(GT=0/1, AD=[8, 4], DP=12, GQ=49, PL=[49, 0, 116]))]
+
+print record.is_snp, record.is_indel, record.is_transition, record.is_deletion
+True False False False
+
+print record.var_type, record.var_subtype
+snp t
+
+print record.is_monomorphic
+False
+
+#for record in vcf_reader:
+#	print record
+#	print record.CHROM, record.num_hom_ref, record.num_het, record.num_hom_alt
+
+#### R
+library(ggplot2)
+library(reshape)
+
+Z <- read.table("Zigosity.txt", header=FALSE)
+Z <- Z[-92189,]
+chr <- 1:34
+ 
+homRr <- sum(Z$V2)/(sum(Z$V2)+sum(Z$V3)+sum(Z$V4))
+hter <- sum(Z$V3)/(sum(Z$V2)+sum(Z$V3)+sum(Z$V4))
+homAr <- sum(Z$V4)/(sum(Z$V2)+sum(Z$V3)+sum(Z$V4))
+Zp <- cbind(homRr,hter,homAr)
+colnames(Zp) <- c("Homozygous R","Heterozygous","Homozygous A")
+barplot(Zp, col=c("green"))
+
+ChrRate <- NULL
+#par(mfrow=c(5,7))
+for (i in chr)
+{
+	chindx <- grep(unique(Z$V1)[i],Z$V1)
+	homRr  <- sum(Z$V2[chindx])/(sum(Z$V2[chindx])+sum(Z$V3[chindx])+sum(Z$V4[chindx]))
+	hter   <- sum(Z$V3[chindx])/(sum(Z$V2[chindx])+sum(Z$V3[chindx])+sum(Z$V4[chindx]))
+	homAr  <- sum(Z$V4[chindx])/(sum(Z$V2[chindx])+sum(Z$V3[chindx])+sum(Z$V4[chindx]))
+	Zp     <- cbind(homRr,hter,homAr)
+	#barplot(Zp, col=c("lightblue"), main=paste("Chr",i,sep=" "), las=3, ylim=c(0,0.6))
+	ChrRate <-  data.frame(rbind(ChrRate,Zp))
+}
+par(mar=c(4, 3, 4, 5) + 0.1)
+barplot(t(ChrRate),col=c("blue","green","yellow"), main="Zigosity across Chromosomes", font=2, space=c(0.4, 0.4), names.arg=as.character(chr))
+par(xpd=TRUE)
+legend(x=48,y=1,legend=c(expression(bold("Hom R")),expression(bold("Het")),expression(bold("Hom A"))),fill=c("blue","green","yellow"), box.lwd = 0,box.col = "white")
+
