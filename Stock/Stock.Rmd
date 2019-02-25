@@ -1,0 +1,60 @@
+---
+title: "Stock prediction"
+author: "Said"
+date: "24/2/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Precios de acciones
+
+La idea es usar Prophet para predecir Stock
+
+```{r libraries}
+#install.packages("prophet")
+library(prophet)
+library(reshape)
+
+setwd("~/Github/Tools/Stock/")
+```
+
+## Including Plots
+
+Leer los datos y acomodar el input para Prophet.
+
+```{r read, echo=FALSE}
+df <- read.csv('stock-price/GOOG.csv')
+
+df<-df[,1:4]
+df.melt<-melt(df)
+df.melt<-df.melt[,-2]
+colnames(df.melt)<-c("ds","y")
+```
+
+## Inicio de Prophet
+Se inician las variables:
+```{r}
+m <- prophet(df.melt,daily.seasonality = TRUE)
+
+future <- make_future_dataframe(m, periods = 365)
+tail(future)
+
+forecast <- predict(m, future)
+tail(forecast[c('ds', 'yhat', 'yhat_lower', 'yhat_upper')])
+```
+
+## Gráficos
+
+```{r}
+plot(m, forecast)
+
+```
+
+
+```{r}
+prophet_plot_components(m, forecast)
+```
+
