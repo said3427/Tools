@@ -1,0 +1,41 @@
+---
+title: "Methylation microarray analysis: 450k"
+author: "Said Muñoz Montero"
+output: html_notebook
+---
+
+Methylation in the human genome is known to be associated with development and disease. The Illumina Infinium methylation arrays are by far the most common way to interrogate methylation across the human genome.  
+
+Methylation analysis pipeline including: quality control, filtering, normalization, data exploration and statistical testing for probe-wise differential methylation. 
+
+
+```{r}
+library(limma)
+library(minfi)
+library(IlluminaHumanMethylation450kanno.ilmn12.hg19)
+library(IlluminaHumanMethylation450kmanifest)
+library(RColorBrewer)
+library(missMethyl)
+library(matrixStats)
+library(minfiData)
+library(Gviz)
+library(DMRcate)
+library(stringr)
+library(lumi)
+```
+## Annotation
+
+```{r}
+ann450k = getAnnotation(IlluminaHumanMethylation450kanno.ilmn12.hg19)
+```
+
+## IDAT files
+
+As for their many other BeadArray platforms, Illumina methylation data is usually obtained in the form of Intensity Data (IDAT) Files. This is a proprietary format that is output by the scanner and stores summary intensities for each probe on the array. However, there are Bioconductor packages available that facilitate the import of data from IDAT files into R (Smith et al. 2013). Typically, each IDAT file is approximately 8MB in size. The simplest way to import the raw methylation data into R is using the minfi function read.metharray.sheet, along with the path to the IDAT files and a sample sheet. The sample sheet is a CSV (comma-separated) file containing one line per sample, with a number of columns describing each sample. The format expected by the read.metharray.sheet function is based on the sample sheet file that usually accompanies Illumina methylation array data.
+
+```{r}
+
+
+```
+
+

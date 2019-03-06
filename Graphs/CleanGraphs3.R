@@ -1,0 +1,12 @@
+# rm(list = ls())
+# Data: Proportion of choices from the good decks as reported in 39 studies
+good.choices <- c(.43, .47, .47, .48, .50, .52, .53, .53, .54, .54, .54, .54, .55, .55, .55, .56, .56, .57, .57, .57, .57, .58, .58, .58, .59, .59, .60, .62, .63, .63, .64, .64, .66, .66, .67, .67, .68, .70, .70)
+yhigh <- 8
+par(cex.main = 1.5, mar = c(5, 6, 4, 5) + 0.1, mgp = c(3.5, 1, 0), cex.lab = 1.5 , font.lab = 2, cex.axis = 1.3, bty = "n", las = 1)
+h <- hist(good.choices, freq = FALSE, main = "", xlab = "", ylab = " ", ylim = c(0, yhigh), xlim = c(.30, .80), axes = FALSE, col = "grey")
+axis(1, seq(.30, .80, by = .1))
+axis(2, labels = FALSE, lwd.ticks = 0)
+rug(jitter(good.choices))
+mtext("Prop. Choices from Good Decks", side = 1, line = 2.5, cex = 1.5, font = 2)
+mtext("Density of Studies", side = 2, line = 1, cex = 1.5, font = 2, las = 0)
+lines(density(good.choices), lwd = 2)

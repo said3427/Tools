@@ -5,7 +5,6 @@ library("ggplot2")
 library(reshape2)
 library(gridExtra)
 
-
 data<-data.table::fread("~/Desktop/consulta-sin-restricciones.csv")
 
 data$mes <- factor(data$mes, levels=c("ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE"))
@@ -27,7 +26,7 @@ for (cliente in unique(dat$plant_id)){
     geom_line()+
     facet_grid(. ~ year)+ ggtitle(nupe) + ylab("Valor (kWh)")
   
-  #  p<-ggplot(dat[dat$plant_id==cliente,], aes(x=mes, y=value, color=variable)) + 
+#  p<-ggplot(dat[dat$plant_id==cliente,], aes(x=mes, y=value, color=variable)) + 
 #    geom_jitter()+ theme(axis.text.x = element_text(angle = 90, hjust = 1))+ 
 #    geom_line()+
 #    facet_grid(. ~ year)+ ggtitle(nupe) 
@@ -39,10 +38,9 @@ p<-ggplot(subset(dat.behaviour,value<2), aes(x=mes, y=value)) +
   theme(axis.text.x = element_text(angle = 90, hjust = 1))+ ylab("generated energy/ expected energy")+
   facet_grid(. ~ year)+ ggtitle("Comportamiento de plantas (2017-2019)") +geom_hline(yintercept=1,color='coral') 
 
-p<-ggplot(dat.behaviour, aes(x=mes, y=value)) + 
+p.violin<-ggplot(subset(dat.behaviour,value<2), aes(x=mes, y=value)) + 
      theme(axis.text.x = element_text(angle = 90, hjust = 1))+ ylab("generated energy/ expected energy")+
    facet_grid(. ~ year)+ ggtitle("Comportamiento de plantas (2017-2019)") +geom_hline(yintercept=1,color='coral')+geom_violin()
-p
 
 means <- aggregate(value ~  mes, dat.behaviour, mean)
 

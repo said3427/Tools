@@ -1,0 +1,10 @@
+export PATH=$PATH:/mnt/e/Tools/mira_4.0.2_linux-gnu_x86_64_static/bin/
+
+
+#MITOBIM LCD
+/mnt/e/Tools/MITObim/MITObim_1.8.pl -start 1 -end 100 -sample StrainX -ref Leishmania_tarantolae -readpool lcd.unmapped.fastq -maf Maxicircle_LCD_MIRA_assembly/Maxicircle_LCD_MIRA_d_results/Maxicircle_LCD_MIRA_out.maf
+
+
+
+#MITOBIM
+/mnt/e/Tools/MITObim/MITObim_1.8.pl -start 1 -end 100 -sample StrainX -ref Leishmania_tarantolae -readpool lcl.unmapped.fastq -maf Maxicircle_LCL_MIRA_assembly/Maxicircle_LCL_MIRA_d_results/Maxicircle_LCL_MIRA_out.maf
