@@ -5,10 +5,11 @@
 library(prophet)
 library(reshape)
 library(crypto)
+library(blastula)
 
-setwd("~/Github/Tools/Stock/")
+#setwd("~/Github/Tools/Stock/")
 cryptocoin<- crypto_history("xlm")
-cryptocoin<- crypto_history("btc")
+#cryptocoin<- crypto_history("btc")
 #df <- read.csv('stock-price/GOOG.csv')
 
 df<-cryptocoin[,c(4,6:9)]
@@ -27,9 +28,9 @@ forecast <- predict(m, future)
 tail(forecast[c('ds', 'yhat', 'yhat_lower', 'yhat_upper')])
 
 
-plot(m, forecast)
+#plot(m, forecast)
 
-prophet_plot_components(m, forecast)
+prophet_plot_components(m, forecast,)
 
-plot(m, forecast) + add_changepoints_to_plot(m)
+#plot(m, forecast) + add_changepoints_to_plot(m)
 

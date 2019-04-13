@@ -35,15 +35,44 @@ Setdiff <- function (x, y) {
 
 ### Importing Data
 
-df_k155<-data.table::fread("~/Downloads/results_K155/result.tsv")
-df_l06<-data.table::fread("~/Downloads/results_L06/result.tsv")
-df_nf3<-data.table::fread("~/Downloads/results_NF3/result.tsv")
-df_tfc3<-data.table::fread("~/Downloads/results_TFC3/result.tsv")
+#Concat Positive and Negative identifications
+#K155
+K155_d5<-data.table::fread("~/Downloads/Negative/results_negative_K155_d5/result.tsv")$name
+K155_d5<-unique(data.table::fread("~/Downloads/Positive/results_positive_K155_d5/result.tsv")$name)
 
-lista=list(K155=df_k155$name,L06=df_l06$name,NF3=df_nf3$name,TFC3=df_tfc3$name)
+K155_d9<-data.table::fread("~/Downloads/Negative/results_negative_K155_d9/result.tsv")$name
+K155_d9<-unique(data.table::fread("~/Downloads/Positive/results_positive_K155_d9/result.tsv")$name)
+
+#L06
+L06_d5<-data.table::fread("~/Downloads/Negative/results_negative_L06_d5/result.tsv")$name
+L06_d5<-unique(data.table::fread("~/Downloads/Positive/results_positive_L06_d5/result.tsv")$name)
+
+L06_d9<-data.table::fread("~/Downloads/Negative/results_negative_L06_d9/result.tsv")$name
+L06_d9<-unique(data.table::fread("~/Downloads/Positive/results_positive_L06_d9/result.tsv")$name)
+
+#NF3
+NF3_d5<-data.table::fread("~/Downloads/Negative/results_negative_NF3_d5/result.tsv")$name
+NF3_d5<-unique(data.table::fread("~/Downloads/Positive/results_positive_NF3_d5/result.tsv")$name)
+
+NF3_d9<-data.table::fread("~/Downloads/Negative/results_negative_NF3_d9/result.tsv")$name
+NF3_d9<-unique(data.table::fread("~/Downloads/Positive/results_positive_NF3_d9/result.tsv")$name)
+
+#TFC3
+TFC3_d5<-data.table::fread("~/Downloads/Negative/results_negative_TFC3_d5/result.tsv")$name
+TFC3_d5<-unique(data.table::fread("~/Downloads/Positive/results_positive_TFC3_d5/result.tsv")$name)
+
+TFC3_d9<-data.table::fread("~/Downloads/Negative/results_negative_TFC3_d9/result.tsv")$name
+TFC3_d9<-unique(data.table::fread("~/Downloads/Positive/results_positive_TFC3_d9/result.tsv")$name)
+
+# df_k155<-data.table::fread("~/Downloads/results_K155/result.tsv")
+# df_l06<-data.table::fread("~/Downloads/results_L06/result.tsv")
+# df_nf3<-data.table::fread("~/Downloads/results_NF3/result.tsv")
+# df_tfc3<-data.table::fread("~/Downloads/results_TFC3/result.tsv")
+
+lista=list(K155_D5=K155_d5,K155_D9=K155_d9,L06_D5=L06_d5,L06_D9=L06_d9,NF3_D5=NF3_d5,NF3_D9=NF3_d9,TFC3_D5=TFC3_d5,TFC3_D9=TFC3_d9)
 
 # Upset Plot
-upset(fromList(lista), order.by = "freq")
+upset(fromList(lista),keep.order = T)
 
 
 #Extracting the elements in comparisons
