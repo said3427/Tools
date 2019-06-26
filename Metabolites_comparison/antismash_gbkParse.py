@@ -81,7 +81,7 @@ for genbank_file in genbank_files:
     
     #Get species name
     species = genbank_file[genbank_file.rfind("/")+1:genbank_file.index("_")]
-    print species,"\n","#"*len(species)
+    print(species+"\n"+"#"*len(species))
     order.append(species)
 
     [all_cluster_types[key].append(0) for key in all_cluster_types] 
@@ -120,12 +120,12 @@ for genbank_file in genbank_files:
                     elif '-' in cluster_type:
                         all_cluster_types["hybrid"][-1] += 1
                         no_hybrids += 1
-                        print no_hybrids
+                        print(no_hybrids)
                         if "pks" in cluster_type or "nrps" in cluster_type:
                             no_hybrids_PKSNRPS += 1
-                            print no_hybrids_PKSNRPS
+                            print(no_hybrids_PKSNRPS)
                     else:
-                        print cluster_type
+                        print(cluster_type)
                         all_cluster_types["other"][-1] += 1
                 
                 cluster_flag = 1
@@ -174,12 +174,12 @@ for genbank_file in genbank_files:
 
     
 SPECIES_ORDER_PRINT = "species"+";"+";".join( order )
-print SPECIES_ORDER_PRINT
+print(SPECIES_ORDER_PRINT)
 for sm_class in all_cluster_types:
     toPrint = sm_class+";"+";".join(str(x) for x in all_cluster_types[sm_class])
-    print toPrint
+    print(toPrint)
 
-print cluster_counts
+print(cluster_counts)
 
 cluster_out.close()
 synthase_out.close()
