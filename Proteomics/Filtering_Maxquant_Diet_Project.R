@@ -12,4 +12,15 @@ lfc<-function(x,y){
   y<-as.numeric(y)+1
   return(log2(x/y))
 }
+data<-data.table::fread("Proteins_matrix.txt")
+data<-data.table::fread("proteinGroups_ids.txt")
 
+intensities<-log2(data[,194:217]+1)
+intensities[intensities==0]<-NA
+
+boxplot(intensities,las=2)
+
+normalized<-preprocessCore::normalize.quantiles(as.matrix(intensities))
+boxplot(normalized)
+
+colSums(!is.na(intensities))
