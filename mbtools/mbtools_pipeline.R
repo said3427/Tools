@@ -17,8 +17,10 @@ processed <- quals %>% preprocess(config$preprocess)
 #Quality plots
 processed$passed %>% quality_control()
 
-denoised <- processed %>% denoise(config$denoise)
+#Add minOverlapping
+#denoise<-edit(denoise) 
 
+denoised <- processed %>% denoise(config$denoise)
 
 ps <- as_phyloseq(denoised)
 asv_counts <- taxa_count(ps, lev = NA)

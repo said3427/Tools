@@ -1,7 +1,7 @@
 library(plyr)
 library(dplyr)
 
-data<-data.table::fread("~/Downloads/matriz_de_proteinas_filtradas.txt")
+data<-data.table::fread("/Volumes/Said/proteinGroups.txt")
 dataProt<-data[-1,10:46]
 dataProt$Intensity<-as.numeric(dataProt$Intensity)
 dataProt<-dataProt%>%arrange(-Intensity,Score)
@@ -15,10 +15,13 @@ lfc<-function(x,y){
 data<-data.table::fread("Proteins_matrix.txt")
 data<-data.table::fread("proteinGroups_ids.txt")
 
-intensities<-log2(data[,194:217]+1)
+
+intensities<-data[,69:74]
+intensities<-t(t(intensities)/colSums(intensities))
+
 intensities[intensities==0]<-NA
 
-boxplot(intensities,las=2)
+boxplot(log2(intensities),las=2)
 
 normalized<-preprocessCore::normalize.quantiles(as.matrix(intensities))
 boxplot(normalized)
