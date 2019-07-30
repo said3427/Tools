@@ -1,6 +1,8 @@
 # Export variables
 
 `export annovar="/home/said/Downloads/Exoma/annovar/annovar/table_annovar.pl"`
+
+
 `export annovarDB="/home/said/Downloads/Exoma/annovar"`
 
 # Usage 
