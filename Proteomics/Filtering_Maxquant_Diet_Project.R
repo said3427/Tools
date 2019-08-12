@@ -23,8 +23,11 @@ designmatrix<-data.frame(label=paste(rep(c("C-C","C-M","C-S","WD-C","WD-M","WD-S
                          replicate=rep(1:4,times=6),stringsAsFactors=FALSE) 
 
 data<-data[,c(1,2,6,7,58,60,61,62,194:217,243:245)]
+
+write.table(data,file="proteinGroups_preprocess.txt",quote = F,sep="\t")
+write.table(designmatrix,file="matrixdesign.tsv",quote = F,sep="\t")
 # Cleaning data -----------------------------------------------------------
-LFQ(data,designmatrix,"MinProb","all",c("C.C"))
+LFQ(data,designmatrix,"MinProb","manual",test=c("C.S_vs_C.C"))
 
 
 dataProt$Intensity<-as.numeric(dataProt$Intensity)

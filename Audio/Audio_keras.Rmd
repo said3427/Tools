@@ -1,0 +1,161 @@
+---
+title: "Audio Keras"
+author: "Said Muñoz Montero"
+date: "12/8/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(keras)
+use_implementation("tensorflow")
+
+library(tensorflow)
+tfe_enable_eager_execution(device_policy = "silent")
+```
+```{r}
+fname<-"00b01445_nohash_0.wav"
+wav <- tf$audio$decode_wav(tf$read_file(fname))
+```
+
+```{r}
+sampling_rate <- wav$sample_rate %>% as.numeric()
+sampling_rate
+```
+
+```{r}
+samples <- wav$audio
+samples <- samples %>% tf$transpose(perm = c(1L, 0L))
+samples
+```
+
+```{r}
+window_size_ms <- 30
+window_stride_ms <- 10
+```
+
+```{r}
+samples_per_window <- sampling_rate * window_size_ms/1000 
+stride_samples <-  sampling_rate * window_stride_ms/1000 
+
+stft_out <- tf$signal$stft(
+  samples,
+  frame_length = as.integer(samples_per_window),
+  frame_step = as.integer(stride_samples)
+)
+```
+
+```{r}
+n_periods <- length(seq(samples_per_window/2, sampling_rate - samples_per_window/2, stride_samples))
+
+```
+
+```{r}
+fft_size <- as.integer(2^trunc(log(samples_per_window, 2)) + 1)
+
+```
+
+```{r}
+magnitude_spectrograms <- tf$abs(stft_out)
+
+```
+
+```{r}
+log_magnitude_spectrograms = tf$log(magnitude_spectrograms + 1e-6)
+lower_edge_hertz <- 0
+upper_edge_hertz <- 2595 * log10(1 + (sampling_rate/2)/700)
+num_mel_bins <- 64L
+num_spectrogram_bins <- magnitude_spectrograms$shape[-1]$value
+
+linear_to_mel_weight_matrix <- tf$signal$linear_to_mel_weight_matrix(
+  num_mel_bins,
+  num_spectrogram_bins,
+  sampling_rate,
+  lower_edge_hertz,
+  upper_edge_hertz
+)
+```
+
+```{r}
+mel_spectrograms <- tf$tensordot(magnitude_spectrograms, linear_to_mel_weight_matrix, 1L)
+log_mel_spectrograms <- tf$log(mel_spectrograms + 1e-6)
+```
+
+```{r}
+num_mfccs <- 13
+mfccs <- tf$signal$mfccs_from_log_mel_spectrograms(log_mel_spectrograms)[, , 1:num_mfccs]
+```
+
+```{r}
+fname<-"1746d7b6_nohash_0.wav"
+```
+
+```{r}
+data_generator <- function(df,
+                           window_size_ms,
+                           window_stride_ms) {
+  
+  # assume sampling rate is the same in all samples
+  sampling_rate <-
+    tf$audio$decode_wav(tf$read_file(tf$reshape(df$fname[[1]], list()))) %>% .$sample_rate
+  
+  samples_per_window <- (sampling_rate * window_size_ms) %/% 1000L  
+  stride_samples <-  (sampling_rate * window_stride_ms) %/% 1000L   
+  
+  n_periods <-
+    tf$shape(
+      tf$range(
+        samples_per_window %/% 2L,
+        16000L - samples_per_window %/% 2L,
+        stride_samples
+      )
+    )[1] + 1L
+  
+  n_fft_coefs <-
+    (2 ^ tf$ceil(tf$log(
+      tf$cast(samples_per_window, tf$float32)
+    ) / tf$log(2)) /
+      2 + 1L) %>% tf$cast(tf$int32)
+  
+  ds <- tensor_slices_dataset(df) %>%
+    dataset_shuffle(buffer_size = buffer_size)
+  
+  ds <- ds %>%
+    dataset_map(function(obs) {
+      wav <-
+        tf$audio$decode_wav(tf$read_file(tf$reshape(obs$fname, list())))
+      samples <- wav$audio
+      samples <- samples %>% tf$transpose(perm = c(1L, 0L))
+      
+      stft_out <- tf$signal$stft(samples,
+                                 frame_length = samples_per_window,
+                                 frame_step = stride_samples)
+      
+      magnitude_spectrograms <- tf$abs(stft_out)
+      log_magnitude_spectrograms <- tf$log(magnitude_spectrograms + 1e-6)
+      
+      response <- tf$one_hot(obs$class_id, 30L)
+
+      input <- tf$transpose(log_magnitude_spectrograms, perm = c(1L, 2L, 0L))
+      list(input, response)
+    })
+  
+  ds <- ds %>%
+    dataset_repeat()
+  
+  ds %>%
+    dataset_padded_batch(
+      batch_size = batch_size,
+      padded_shapes = list(tf$stack(list(
+        n_periods, n_fft_coefs,-1L
+      )),
+      tf$constant(-1L, shape = shape(1L))),
+      drop_remainder = TRUE
+    )
+}
+```
+
+## Reference:
+- https://blogs.rstudio.com/tensorflow/posts/2019-02-07-audio-background/
