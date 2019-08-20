@@ -1,0 +1,26 @@
+---
+title: "Proteinas Esteatosis"
+author: "Said Muñoz Montero"
+date: "12/8/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,message = FALSE,warning = FALSE)
+```
+# Introduction
+Label free quantitative proteomics using LC-MS/MS data.
+
+# Methods
+LFC was calculated using Maxquant.
+```{r}
+# Libraries ---------------------------------------------------------------
+# source("https://bioconductor.org/biocLite.R")
+# biocLite("DEP")
+library("DEP")
+library("plyr")
+```
+
+
+# Results
+
