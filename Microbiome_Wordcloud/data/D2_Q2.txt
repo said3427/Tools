@@ -1,0 +1,140 @@
+Metadata that includes chemistry and other conditional parametersConnectivity between environments or hosts with microbiome dataMore robust models/statistical tests
+Timepoint data on individuals over the course of a lifetime (including different developmental stages)
+Large sample sizes
+Whole genomes and metagenomes 
+Metagenomic testing of environments that exist along a chemical gradient and those specifically defined by high-density life-supporting chemicals 
+
+Multi-omics data for each experiment. But we have an overabundance of data, and we need to analyze this data. Cultured isolates!  
+Updated databases! Many organisms/genes are unclassified/unannotated. This gets back to the overabundance of data and the need for better/more analysis.We need a more ecologically-relevant way to constrain individual species (i.e., the 97% cutoff isn’t ideal). 
+
+More targeted spatial and temporal data are neededoIssue is that analyses are very costly.  How many samples do we need?  What if the analyses do not coincide?
+Aligning the scales of different data types (i.e. weather data is on the km scale and microbial data on the μm scale)
+
+Statistical analyses or outcomes to discern whether our findings are representative of the larger system
+Multiple domains and trophic levels (e.g. viruses, nematodes, etc)
+There is a positive effort in the field to move to multi-omics; how do we capture important ecological information as we try to bolster the databases?
+
+16s rRNA sequencing data for relative abundances
+Total Abundances of Species (i.e. qPCR)
+RNA for gene expression
+Environmental Data of the System Over Time: Substrate Measurements (electron donor), pH, Nitrogen (forms), Phosphorus (forms), Temperature, Moisture Content, Electron Acceptor, Light Intensity, (Depending on the Environment to be modeled, other physical/chemical characteristics may need to be monitored)oCould use isotopic markers to test different metabolism pathwaysoLC-MS -> to detect potential unanticipated microbial products
+
+Time series data
+Data from species removal experiments with synthetic communities
+
+
+Metabolic information to inform the model
+Whole genomes
+Multi-Omics
+Geophysical properties of the systeme) Time series to detect turn-over/fluctuations
+Fitness read-outs: i.e. resilience to perturbation, Integrate chemical metabolites with biological functionality: metabolic flux network.
+
+
+analyze large amounts of data, meta-analysis, use of public databasesto find broad patterns
+more/bettermetadata about environment studied, more clear definition of environment studiedolook for similar trends in similar/dissimilarenvironmentsocareful comparisons based on environment
+robust and manipulatable synthetic communitiesomulti-omics on synthetic communities to see which -omics informs models best
+use “strange”model results to inform future experimental design and questions to refine model and understanding of system-focus on what doesn’t fit yet
+
+High-resolution   temporal   sampling   (metagenomics   for   evolution,   metabolomics   and metatranscriptomics   for   changes   in   metabolism)
+Models   of   site-specific   evolution   over   a   human’s   lifetime
+
+Affordable,   tractable,   and   translational   model   systems   utilized   in   conjunction   with mathematical   models
+Study   the   phylogenetic   relationship   between   gene   sequence   variants
+Consolidated   databases   of   studies   to   facilitate   efficient   meta-analyses   and   hypothesis generation
+
+
+Need to know the population genetic characteristics of microbiome (recombination, mutation rate, etc)Need to knowmetadata about microbiome, what resources can be utilized, phylogenetic relationships, residence times, information about dormancy, other lifehistory traits. Better databases so that this information can be mined and freely utilized. Even provide workshops in omics data integration.Knowledge of the virome, unicellular eukaryotescollecting a combination of 16S, 18S and virome sequencing. Need a criticalvolume of sample to be able to look at these factors simultaneously.
+
+
+
+Microcosm studies using targeted communities  could be used to study theories ofsuccession, resilience, etc. Amplicon sequences,shotgun metagenomes, etc.Reproducible data analysis pipelines and careful characterization of hosts/environmentswould be helpful for understanding results across systems
+
+
+(1) Identify microbiome feature/component that affects host
+phenotype/fitness/productivity; (1) Quantify the effect of a microbiome component on
+host phenotype/fitness/productivity; (2) Estimate of how heritable that microbiome
+component is
+● Quantify microbial composition; data on microbial interactions; data from perturbation
+experiment (before/after perturbation); need to define a clear baseline; monitor over a
+time series after perturbation; need a clear definition of what counts as
+“resilience”/“stability”/“good function”
+○ Could also be done in historical data; e.g., looking “back in time” through soil
+columns, time series, etc.
+
+Awareness that function can be stable even if composition is not; vice versa
+● Need data on starting community- if any- (baseline, prior to establishment); then, time
+series data on community (or whatever you want to measure the succession of)
+● Data should incorporate both ecological and evolutionary processes:
+○ Migration rates
+○ Extinction rates
+○ Growth/proliferation rates
+○ Allele frequencies
+○ Mutation rates
+○ Recombination
+○ HGT
+○ Intensity of selection
+
+Mainly model system or adapting newer models to understand the function and transmission of the microbiome•Robust tools for studying and analyzingstatistical data of microbiomes•Multilayer analysis of data generated from different experimental setups, however, this relies on well documented metadata•Reproducible and standard pipelines or analyses that could be helpful for analyzing and translating models across different systems
+
+
+Targeted questions and hypotheses
+
+Species/Microbe community census data - making sure all kingdoms are taken intoaccount.●Functional data (products/evidence of interactions)●Some representation of system characteristics (time, selection pressures, variability)●Reference Multi-omics database, including ability to predict linked and unlinked traitswithin and between microbes●A shared vocabulary
+
+It’s still unclear what data is important – so maybe just collect a lot in the meantime?Strain-level metagenomic sequencing data is pretty necessary for evolutionary analyses.Simple model systems are important – though we don’t know yet how the principles we learn from simple systems may or may not apply to more complex systems.
+
+
+All the -omics.No? Too expensive to do at scale, have lots of noise and stuff. Better to just do metaT andmetabolomics. (targeted metabolomics would be better... but still don’t know who is makingwhat)More direct measurements of functions.Data at multiple scopes e.g., smaller datasets to try to integrate with larger/more mechanisticdatasets.Model systems / synthetic communities where we know more about what they’re doingfunctionally, also could ask broader questions e.g., BEFCulturability: e.g., phosphate a/c, breaking dormancyReproducibility: how do you reconstitute a microbiome in the lab to work with itexperimentally. Eg., AMF really hard to work with. Replicating experimentsIn situ measurements, temporally & spatially resolved data on disease state, function,environment. Real-time measurements of process, populations.Manipulations: reciprocal transplants. Comparing intact v disturbed microbiome.Historic datasets--land use, climate, sample archives (e.g., herbarium etc)
+
+Multi-omics approaches to better understand dynamics/interactions•Spatial/environmental data (scales)•Reproducible data analysis pipelines, controls•Standardized sampling methodologies
+
+
+
+Manipulated experiments with controls, such as phage-depleted communities vs.intact communities, or perturbations to communities followed by time series● Microfluidic replicates of many small simple communities. For example,manipulate the “order of arrival” of various microbial taxa, priority effects,antimicrobial resistance of poly microbial communities, etc
+
+
+Comparisons of microcosm experiments (controlled but not field-relevant) withfield experiments (not as controlled)
+
+Climate change -Weather patternEvolution on a short timescale –longitudinal sampling, evolution within months and years from the same environment(eg human gut experiments benefit from that)Simple communities make a good proxy to test the classical models of ecological evolution theory (eg bioreactors)Transcriptome and metabolites of microbial communities, especially to identify chemical byproducts that could be changing the whole community
+
+Community assembly: Colonization / re-colonization (seed bank):
+Seed versus active members? 
+High temporal resolution
+Development of gnotobiotic system
+Context of assembly (order, conditions) 
+Differentiating stress tolerators vs competitors
+Time-course data to build operational definitions 
+Data from ‘press’ and ‘pulse’ disturbance
+Predicting complex functions: redox chemistry, secondary metabolite exchange
+Genome data, high quality
+life-history/ phenotypic data
+Ecosystem level impacts of microbes 
+Scaling up processes we need rules for space. How does different biogeography predict the activity?
+Predicting core microbiomes
+Standardized approaches
+Conventional language/terminology (phylotype versus ASV versus OTU)
+Can you replace imagined theory / model with predictive AI tools? (computational evolution)
+Synthesize and parameterize the ecological theory 
+Seduce computer scientists with ecology
+(this interacts with the question about rules across environments)
+When are rules applicable across many environments?
+A set of questions that act as a benchmark across systems
+Stochasticity versus deterministic processes
+What is the distribution of variance across time 
+When is a community at equilibrium? 
+temporal resolution
+Are we dealing with Schrodinger’s cat in microbiome research?
+How frequently does the community change state?
+How does microbiome moderate host ecology
+Evolution of antibiotic resistance based on microbe-microbe interactions
+
+
+Quaottatve data (i.e., species abuodaoces) is oeeded for the formatoo of robust theories of microbial populatoo droamics.•Better data ideotfriog the fuoctooal roles of microbes withio commuoites. How importaot is epigeoetcs?•Need to quaotfr fuodameotal ecological aod evolutooarr processes withio microbiome, such as dispersal rates, speciatoo rates, etc.•Mar oeed data from model srstems with more complexitr to approach the droamics of most oatural srstems.
+
+The basicsoFunctional annotation of genes, metabolites, proteins to power our ability to make inferences from multi-omic analysesoStatistical tools and methods for temporal/spatial analysesoHigh quality metadata (Geolocations) are needed to do any spatiotemporal analysisoSamples taken at the right spatial or temporalscale to analyze the ecosystem in question, especially if there’s a perturbationoGood model systems. Lakes as microcosms for studying spatiotemporal impacts; Bees can be studied for metapopulation dynamics and dispersal;oFor functional data we would need transcriptomics, metabolomics or proteomics, depending on the questionoFor taxonomic data, we would need long read ampliconsequences (16S, ITS, 18S) rather than short reads•Higher level analysesoA sense of the population dynamics of the host and whether they are related to the studyoThe phenology of the host, which is at interplay with the microbiomeoA combination of rate measurements, composition, and (taxon-specific) activity inany system that we are evaluating
+
+We need metagenomic and metabolomic analyses to be able to relate gene potential to chemical function. We also need to collect these data on entire communitiesalong with individual, culturable isolates so understand both the isolate and communitymetabolic states. Lastly, we need better databases to correctly characterizemicrobes and their metabolites.Unless we can get accurate characterizations,we won’t be able to make accurate predictions and test relevanthypotheses.
+
+To study interactions having a microbiome containing a microbe with knownmetabolic capability and tracking the passage of that metabolite through thecommunity. - Multiomics data, but with correct normalization that allows comparison across datasets. We need to better understand how normalization affects ourdata and have better, more transparent, and benchmarked methods to applynormalization to data. - Phenotypes of microbiomes coupled to omics data to get labeled datasets for machine learning or other types of analysis. If machine learning (or systems of equations) is going to be a good tool, we need large labeled datasets to effectively utilize the most powerful approaches. Thus, better large centralized repositories with good metadata collection would be highly beneficial here. - Experimental validation of specific metagenomic hypotheses may allow generalization of these hypotheses to similar systems or compositional profiles of microbes.
+
+

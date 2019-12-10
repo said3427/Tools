@@ -1,0 +1,59 @@
+Is there an anticipated theory that would only be applicable to either hosts or habitats? Or evenapplicable to only one type of host or habitat?  A lot of conceptual models that began in a field entirely outside of microbiology can be applied to microbiology, such as biostatistics, so we would suspect broad application.Can we develop appropriate/accurate microbe-host-environment models?
+
+Yes. This could be applied to many systems but is more applicable for host-associated communities.
+
+Are we taking into account host-associated vs. free-living organisms? We are still in the era of “Who’s there and what are they doing?” and so this is currently applicable across fields. To approach metabolic modelling, you need data from multiple sources (multi-omics) that can be compiled to inform multi-species metabolism. Needinputs/outputs of metabolites as well as who is there.
+
+Accessibility to ecological models is needed•We think many ecological theories are based on macroecology.  However, microbial systems might stretch the bounds of the assumptions.  Therefore, when is it appropriate or not appropriate to apply a macroecology model to microbial ecology?•Move from co-occurrence between organisms to omni-occurrence (i.e. how everything impacts everything)
+
+This conceptual model discussed above is general in nature and could theoretically be applied to a variety of microbiome settings.
+
+Highly dependent on the parameters of the model.
+
+better metadata/definition of environment can help us identify the important variables that inform the model
+
+
+Scaling laws determiningthe complexity of microbiomes should be scalableacross hosts Coexistence theory, understanding of higher order interactions could be applied across hosts and habitats.
+
+
+Should be applicable to any host-associated system where quantitative genetics predictions are
+used
+● Would need to be flexible to accommodate varying definitions of the baseline for comparison,
+definition of “good function” — which will vary among systems/settings
+○ Focus on really general categories of parameters that could apply to any microbiomes:
+e.g., “number of interactions”
+
+● Should be generally applicable if the parameters are general enough. Look at successful models
+for comparison: e.g., island biogeography theory, which uses general parameters (migration,
+extinction, speciation) rather than highly specific parameters (diversity of orchids; soil pH;
+temperature)
+
+This is very system dependent and in the general broad sense some models should be applicable, however, controls and standards that allow comparison are necessary for translating these models into different hosts or environments•The identification of key parameters, factors that modulate stability and shifts could easily help to transfer knowledge from system to system
+
+
+
+Modelling of interaction networks of microbial functions has potential to span hosts / habitats,as does integration of multiple data types and multi-trophic interactions, dimensional reductionof environmental and microbial parameters and the like
+
+It seems unlikely that a single theory can encompass all systems and communities that have varying complexity and environmental contexts.
+
+
+
+It seems unlikely, due to the complexity of the systems.
+
+Some are broadly applicable, like how you sample (eg longitudinal, replication) would be the same; succession sampling would apply to all, but what you look at in the data would be variable (host vs host-free would be different approaches)Metadata would be different (host: diet might change, host might regulate most of the environmental factors, immune system status, medication especially antibiotic metadata, age and geography); it can be difficult to get metadata in all these fields
+
+Should we assume that everything has a microbiome?
+caterpillar guts with insane ph
+Microbiomes on geological timescale
+Rules that emerge across different levels of host complexity 
+Extreme environmental conditions: vacuums, altered gravity
+
+
+Predictoos related to fuoctoo mar, to some exteot, alwars be srstem specifc. However, geoeral theorr describiog the forces that shape microbiome compositoo is possible. Geoeral theorr for microbial commuoites mar be able to be borrowed from geoeral commuoitr ecologr theorr
+
+We all really liked the phylosymbiosis work, but it doesn’t apply across all contexts and microbiomesettings
+
+
+Theory about what different microbes are doing is probably not very translational between microbiomes. At a very high level it is probably true
+
+that things like positive and negative interactions exist or that the concept ofkeystone species exists, but it is evident that between very different microbiomes there may be major differences in the mechanisms that lead them to transition between states or impact their hosts. The desired outcomefor humans also probably has a major impact on the model that defines communities. As we discussed for agriculture when a system is intensively managed there is likely a much different microbiome and ecological principals governing it than when looking at a natural system. - Maybe the most interesting overlap is thinking about applying similar analysis approaches across many different microbiomes. As there has been significant investment, analysis, and method generation in the human microbiome field, unifying and broadly applying analysis approaches will allow more comparable data to be available and more effective means of asking the question: Do general cross-microbiome ecological principals exist and govern behavior.

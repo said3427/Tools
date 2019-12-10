@@ -1,0 +1,191 @@
+Aggregate data types so that more hypotheses could be tested by mining them and to model important processes
+Why doesn’t this occur more often?
+Continue to improve data accessibility 
+Validating models with data (i.e. rapid change in Arctic systems, as the systems change and we have data, were the predictions close?)
+Standardized ‘omics datasets are paramount
+
+Continued need for special symposia (like this one!) to exchange and sustain communication on topic areas
+Many working groups are emerging
+They are helpful
+How to align community goals and priorities
+Transforming them to become a resource we can’t live without
+How can we share data faster as the technology continues to improve
+Culturing to grow our understanding of organisms behaviors
+Apply ecological theories to microbial questions
+Is there a better way to link across systems abiotic factors that might control microbial processes
+Linking microbial processes to the landscape scale, where appropriate
+Reproducibility is important, but how do we achieve this goal 
+Agreeing on pipelines for comparison will be hard 
+We typically use multiple methods and pipelines to evaluate the same dataset in the same lab -- how can we find consensus 
+Using positive controls should be encouraged
+Can we come up with a way to evaluate the pipeline for a particular dataset, instead of deciding on a single pipeline or protocol? Eg. high sensitivity and specificity by this pipeline for this dataset. CLSI-like standards and guidelines for microbiome datasets. We may need different standards for different environments, due to highly variable environmental conditions, community diversity etc.
+
+
+There is a need for an open resource for methods, standards and comparing results. Currently there are many different extraction, library prep and sequencing methods available, often leading to results that are not repeatable. A recent presentation by the Water Research Foundation entitled Webcast Guidance Manual for Monitoring Biological Filtration of Drinking Water (April 11, 2019), showed that split samples sent to different labs resulted in completely different results for 16s rRNA community sequencing. Having standards for different types of media could help to improve repeatable results between labs.
+
+What are all the possible ecological, evolutionary and biological processes at play in a microbial community? A comprehensive list of all possible processes that factor into community assembly will help future researchers build models of microbial systems. Researchers could even selectthe processes that may be most important in their systems, discounting insignificant ones when trying to build a model of their system.
+
+Determining functions of the community
+
+referring   back   to   yesterday's   talk   by   Handelsman   on   the   hundreds   of unannotated   microbial   genes   -   do   they   have   a   community-wide   function
+
+How   to   perform   and   integrate   multi-omics   into   microbiome   study
+Standardization,   standardization,   standardization
+extraction   kits,   sequencing   technology
+
+Determining the applicability and representativeness of model communities that much of our work is based on to actual environmental systems.
+We want our results to be translational and applicable to reality. What aspect are represented? What are the limitations: i.e. not over-extrapolating results
+When and how should they be applied
+How do we test if a model is representative (genetically, metabolically, functionally, etc.)
+What defines relevant timescales for each system/taxonomic resolution
+Are there universal design principles for all microbiomes
+If there are consistent interactions (for ex. Between cheaters and degraders) then analysis of one microbiome could simultaneously reveal information about other microbiomes
+How much can metabolic/computational/mathematical models predict interspecies/interkingdom interactions (Spatial? Functional? Predatory?
+
+
+Reliable Interactomes: Accurately defining true interactions from large complex networks
+Separating fact from noise in inherently large datasets
+This will help narrow focus to areas of microbiology that we can target, i.e. the most important parts of communities for a given question.
+Enable the combination of network theory in understanding complex patterns. (i.e. controlling nodes. Stability)
+Linking microbial members by a common functional unit that addresses our space/time problem.
+How do you predict community phenotypes from genomes if many functions are only seen in a complex community environment (“Reverse ecology”
+Democratization of interpretation?  Tools like FUNGuild help non-microbiome specialists improve understanding of experimental findings.
+
+
+Given the vast amount of this kind of data that we have, we could make tremendous progress in our understanding on microbiomes if we could “connect the dots” between genomes and the environment.
+
+Having readily useable tools to begin assessing how important various biological/virus/ecological/evolutionary factors are in our specific study systems (which ‘-ome’ do we prioritize).
+All microbiome researchers are looking to narrow the focus on the study system. Having tools (a tool? KBase?) that helps prioritize areas of inquiry would be great. 
+Ex. a simple measures of viral rel. abund. in time-course metagenomes might provide a yes/no decision for exploring the virome (etc.) 
+Also help us understand the functional/ecological processes that are most important in a given system.
+ 
+
+How do we get around the issue of stochastic impacts on predictive power of generating microbiology datasets?  
+What drives microbial community assembly and how does that change across different environments?
+How closely intertwined is microbial composition to microbial community function?  
+
+Under what conditions do interactions matter to microbiome composition andfunction? These may include interactions between species, such as priority effects, orinteractions with viruses, which are often treated as a black box. Addressing thisquestion requires:
+
+development of more mechanistic microbe-specific theory,
+
+improvements in technological ability to culture and perform experiments,and integration of field and microcosm experiments guided by theory.
+
+When does taxonomy vs function matter
+What is the relevant scale to make observations to understand impacts ofperturbations on the microbiome
+Spatial and temporal resolutions that are needed
+Mathematical/theoretical frameworks that would be tractable to quantitateempirical observations
+Links to biogeochemistry, e.g. for ecosystem observations
+
+How   can   studies   be   designed   to   maximize   reproducibility   and   reusability?   The   cost   of science   is   non-trivial,   and   efficiency   benefits   all   stakeholders   and   advances   the   science. The   repurposing   of   data   can   minimize   wasted   effort   and   resources.
+
+Are   there   early   indicators   (components   of   microbial   communities)   of   the   microbiome that   could   be   used   to   predict   any   shifts    towards   unfavorable   outcomes   for   the host/environment?    From   a   human   health   perspective-   to   be   able   to   better   predict   the health   of   the   patient   non-invasively.
+
+How   can   we   effectively   integrate   temporal,   multi-omic   measurements   of   microbiomes to   engineer   predictable   changes   in   microorganism   communities   to   efficiently   benefit the   system?    This   is   urgent   to   gain   a   deeper   understanding   of   the   possible   mechanisms   in how   communities   function   and   the   emergent   effects   of   manipulating   complex   systems (e.g.,   environment,   humans,   animals,   planet)
+
+Standardization is key! Studies need to be reproducible and comparable: processing samples, databases, controls, metadata, etc
+
+How much genetic variation vs environmental factors impact host phenotypes? And to which extent one's impact is more than the other, so maybe we can narrow it down when doing analysis. there's a chance some microbiome shifts are affected more by environmental factors which gene variation can’t well capture
+
+How can we translate all the knowledge gain so far? Applications?
+
+Microbial interactions— how do we characterize them and how important are they in
+different environments for community stability, function, evolution, etc? Are interactions
+reproducible in ‘real-world’ systems. Can we incorporate models, and find
+generalizations across systems
+
+How can we promote standardization and reproducibility of workflows
+
+How can we characterize strain-level variation, ‘microdiversity’, that matters in
+different systems, and how do we overcome limitations
+
+Climate change driven microbiome alterations need to be addressedacross all ecosystems from human gut to plant soil
+Microbial interaction experiments should start to drive the work over just identifying metabolisms presentin the genome
+How do you identify the ecological tradeoffs in experimentsintroducing traits into environments
+
+Reproducibility - How can we make microbiome research more reproducible acrossstudies, labs, and methods so that our findings are robust?
+2. Scale - What spatial scales of the microbiome are relevant? Does the appropriatescale differ by system/question?
+3. Thinking across environments - What findings can be transferred across systems? Cansuch findings inform the study of model environments?
+
+How do we create the vocabulary and mathematical models neccessary to describe theseinteractions?  Will these approaches be applicable across microbiomes? Will the models for themarine microbiome translate to the human microbiome.-In order for us to develop answers to some of these other pressing questions, we mustfirst share a common lexicon to describe the types of functional, environmental, andphenotypic drivers and interactions to communicate across systems.
+Building up infrastructure to communicate findings-We will need to be able to pull together information gained from models, culturestudies, etc. across systems to build an accessible source of  in-depth information thatcan be used to contextualize new findings.
+Integrating principles from other fields into microbiome science-Ecological (characterizing functions) , Synthetic biology (modular approaches to study asystem at a granular level), macro-economic ( ‘trade’ of metabolites and molecules)
+
+
+What are the units of a microbiome and how can we universally share these units (and their metadata) between researchers so that weare all talking about the same thing in a meaningful way?
+
+Do most microbes actually exist in interactive communities or are we mostly seeing the activity of many more solitary individuals or is it somewhere in between? What methods can be used to assign causalityto a microbe or microbial ineraction in a complex community in relationto an observed community phenotype (i.e. community genetics, structured equation modeling, machine learning???)?
+
+The strain/species concept is problematic. Would it be radical (or justcrazy) to use a continuous metric (similar to beta diversity) to compareindividuals rather than trying to bin organisms into some sort of taxonomic framework
+
+Intraspecific diversity, plant ecology is also looking intraspecific differences and the importance of intraspecific diversity on communities. Further, how to get out of our silosand whatother scientific communitiescan we learn from and draw inspiration from?Not just withinmicrobiology, but across all biology. What can welearn from, for example,plant biologists about community assembly
+
+Is the microbiome generalizable to some extentacross different hosts? Can we generalizethe ecology of assortedmicrobiomes to make models?Also, Important to linkcommunityto function, going beyond what’s microbes are presentand understanding what the specific job of themicrobeis
+
+Understanding in-house contaminants and making sure to know what background noise looks like. How to ensurewe are using the correct negative controls and we aren’t making incorrect associations
+
+Making sure Microbiome isincorporatedintothe curriculum, ensuring thatASM hascurriculum guidelinesfor microbiome education
+
+How do standardize measurements and methods in such a rapidly developing field? How do we develop more reproducible research? How can the research frameworks used in current studies be rapidly applied to new system specific domains?
+
+What properties of microbiomes matter for (eco)/system function (often described as health)? How generalizable are those properties across microbiomes? Can we predict what the important properties are (guild vs. composition or taxon, etc.)?
+
+How can we study microbial systems in a way that develops and tests ecological and evolutionary theory? Some ecological processes may be mediated by higher level trophic and inter-kingdom interactions. Do principles of ecology from macro systems apply at the micron scale?
+
+How does the host genome play in selecting for microbes?What role does the host genome play in selecting microbial communities. Similarly, what are the feedbacks between the host and microbes?
+
+Are there coevolving units in the microbiome: how to detect them?
+How are they distributed through space and time?
+It’s easy to think about coevolution in intuitive terms, but what is it? How
+do you measure it?
+How to predict phenotype from genotype?
+In retrospect, too vague. However, the question of what are functional
+units and how to detect them is related to this fundamental issue.
+How does fitness emerge in the context of a community?
+How much do high-order interactions matter? Non-linearities, more generally.
+For example, frequency dependency.
+
+General notes: At this point we should prioritize “low-hanging fruit” that would move things along; building blocks for bigger questions.
+
+How can we create a tractable experimental model that accurately represents the complexity in a real microbiome and would enable us to gain information?
+A challenge for us making progress on these questions
+Making progress solely with oversimplified models might lead to spurious conclusions
+Is it species interactions themselves that determine community functioning/emergent properties? Or do species interactions merely shape the community composition which in turn determines community functioning?
+Is there such a thing as an “equilibrium” community that we can focus on? And if there is, should we be focusing on it?
+How does “microdiversity” (intraspecific variation) influence the abundance & nature of microbial interactions? How does microdiversity influence two-species interactions? Do microdiversity effects classify more as switches, as gradients, or as some other type? What is the relative importance of within-species vs. among-species variation for microbial interactions?
+Making progress solely based on coarse-grained taxonomy may lead to spurious conclusions
+Even within a single microbial strain, there may be micro-microdiversity in its behavior (phenotypic plasticity), dependent on external factors including the host.
+
+How often are the rare members of the microbiome playing an important role? 
+Critical for evaluating our methods and understanding the ecology of thesesystems. Important from a conservation perspective, e.g., in pollinators therare spp provide rather little ecosystem service, but we don’t know whetheror not they’re important in the microbiome. 
+How do you generalize among different systems? Are there general rules for how microbiomes assemble across systems? What processes are generalizable and why?How do we dissect (and model) the complexity of the interactions within themicrobiome and how these microbiome-level interactions interact with the host?[Earth microbiome; NEON; AgMicrobiome RNC; ...]
+
+Important because we want to be able to learn from each others’ systems.We would like there to be system-invariant rules so that the science canmove faster. Example: BEF--diversity can increase ecosystem functionbecause of complementarity or jackpot effects. Relates to rare speciesquestion in terms of who we need to include in the model. Also related tothe taxonomy-function question--inter vs intraspp diversity. Predictability is important if we want to manage and harness these interactions.
+
+What is the relative importance of G, E, GxE? E.g., Heritability of the microbiome &definition of the core microbiome. How does the microbiome respond to stress andover what timescales? E.g., how much do host epigenetic effects influence themicrobiome? What is the role of epigenetic processes within the microbiome? E.g.,in rhizosphere, microbes may often just be responding to the environment andengage in actions that benefit the plant, but then evolution by natural selection canenhance plant traits that lead to associations with those microbes. This comes backto understanding ecological versus evolutionary timescales.oKey for natural selection to impact these associations. Important to be ableto breed hosts for microbiome attributes. Could be a tool for manipulatingmicrobiomes e.g. plants, warfighters.
+
+How do we define an organism?
+
+
+Strain transmission. We know things that correlate to health outcomes, but don’t understand the timing of specific strains when theyintegrate into the microbiome.How did it get fromperson A to person B.
+
+The ability to manipulategut microbiota
+
+More mathematical models (in the context of compositional data, such as high throughput16S rRNA gene sequencing data) in order to study the microbe-microbe interactions rather than looking at individual taxa
+
+
+
+One of the major points is the classification of functional groups and can we do thatusing indirect evidence, for instance genomes, as Dr. Cordero presented on his talk, many of these tags are going to be redundant, thereforea sounderway to do this classificationcould help characterizemicrobialcommunities
+Standard communities, so far most microbial standards are dedicated to bacteria, but in terms of reproducibility it will be great to have standards for different members of the microbiome and hopefully having those available for everyone on accessible repository(i.e. addgene, ATCC, even commercial ones if necessary).
+Evolution in the host, are we able to characterize evolution at small scales of time? Using genetics tags maybe it is possible to study evolution in the microbiome, however, how stable are the results based on the system, since different outcomes could occurs based on the conditions
+Establishing model communities -This is a major point and something that probably various labs are working on, since most of the data is empirical and observational.  Noww e have to focus on testing hypothesis, however we need to establish models that could be used for that purpose.  Synthetic communities and in vitro environments could be a great componentof this, however, how do we translate that into applied science (i.e. agriculture, human medicine, conservation).
+Effective sampling, if the aim is to characterize complex systems and determine ‘healthy’ microbiomes and establish a measure to determine the potential of a healthyvs non-healthy microbiome
+
+
+We belieie that the most fqndamental  qestons address the mechanisms of commqnity regqlaton of microbiomes. Specifcally, mechanisms that can be qnderstood and applied across systems. This inclqdes delineatng the factors responsible for microbial species coexistence dynamics and density dependent feedbacks. This also inclqdes deieloping a beter qnderstanding of the spatal strqctqre within microbiomes and the role of metacommqnity dynamics ri.e., local extnctons and dispersal mediated persistence)
+
+How much functional redundancy exists across communities? 
+Communities can be very diverse and vary across individuals, but is it phylogenetic diversity that matters or just the functional capabilities of the community? Can we define a functionally healthy microbiome rather than characterizing individuals in the community? How can we accurately characterize recombination within natural microbial communities? and how does recombination impact community dynamics?
+We know recombination is a major force of evolution and diversification in bacteria (and likely archaea). Therefore, in orderto understand the evolutionary dynamics of microbiomes, recombination must be studied. However, it is very difficult to detect recombination events specifically in metagenomic data.What role does colonization order play in shaping community dynamics?
+Colonization order has been shown to impact community structure in some microbiome systems, but it is not clear if colonization order has long term impacts on community composition and dynamics.
+
+Moving from presence/compositional analyses and identifying functions within microbiomes. How do we know what the functionof microbes are within systems, and how can we accurately understand the interactions within these communities?Especially for clinical microbiome work, we need to standardize methods and statistics so that researchers can get the same results from the same experiments. 

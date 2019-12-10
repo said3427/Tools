@@ -1,0 +1,141 @@
+Community/function/activityExpected chemistry as a result of an existing or changing microbiomeDistribution of functional genes within a given microbial community as well as between different microbial communitiesPredicting plasticity of a strain, community, or microorganisms within the communityResiliency/robustness of the community and specific members to environmental host ecologicalstressesDrivers of horizontal gene transfer and impacts on community resiliency. Impact of horizontal gene transfer on limits of lifeHow can you model transfer of microorganisms between environments hosts
+Impact of diversity on the resiliency of the microbial community
+
+Recombination
+Microevolution
+Community fluctuation and turnover
+Temporal strain-level variation
+Geospatial chemical modeling. Knowledge of what organic and inorganic chemicals are present in a particular area may go a long way towards predictive spatial modeling of microbial populations with known biopathways that contribute to specific metabolic and chemical cycles.
+
+
+Is this really a community? Are different microbial species actually interacting? Communities are highly localized spatially, so are different groups/groups of species actually interacting? In the same vein – temporal localization as well (ex. soil). Are detected organisms even functional? 16S rRNA sequencing doesn’t tell us. In terms of soil microbiomes, what is the host? The “site” is the host(?). Could composition of the soil or physical soil properties constitute an “abiotichost”? But is host inherently biotic. Looks like the field is moving toward multi-omics studies for all experiments. Need to incorporate horizontal gene transfer into modelling efforts.
+
+Microbial interactions with each other and their environment
+Important processes that affect the landscape (i.e. nutrient cycling) or larger host (i.e. disease)
+Resilience following disturbance events•Role of the core microbiome
+A mechanistic understanding is needed that could be broadly applicable to other systems (i.e. what are the rules governing microbial behaviors that could be broadly applied?)
+
+Processes at the landscape and/or host level
+How and why core microbiomes evolved together
+
+From the knowledge that we have, would it be a stochastic or deterministic model? 
+Assumptions are key for the models
+Model the point that functional redundancy stops occurring in the system-Aside – how to differentiate between the core and “rare” microbiome?
+
+
+
+Formation of community (Abundance (relative and total) of species) (based on a previously known community composition and specified environmental conditions)
+Chemical properties of the environment (from community activities and physical/chemical characteristics, and interactions between the two)
+What metabolisms are being carried out (what the organisms are doing)
+Depending on given environmental conditions (non-homogenous) where different species may occur
+
+Growth/death of microorganisms -> predict relative and total abundances
+Consumption and transformation of substrates -> chemical properties of environmentc.Species’ interactions -> predict relative and total abundancesd.
+Production of microbial byproducts -> chemical propertiese.Metabolisms and Gene Expression of Microorganisms as a function of environmental conditionsf.
+Physical/chemical properties of the environmentg.
+Account for thermodynamics
+
+
+We think that microbial communities differ from macrobial communities in fundamental ways with respect to the following attributes and hence warrant careful considerations -
+Plasticity
+Rules for community assembly
+Niche construction
+Dormancy
+Metabolic Diversity
+Eco-evolutionary feedbacks
+
+
+
+Composition, temporal dynamics, functional potential, metaphenome, interactions: between microbiomes, between host & microbiome as well as characterization of abiotic inputs.
+Population dynamics, Functional predictions
+Fitness landscape exploration
+
+
+proper annotation of genes, function class etc.•assembly•functionalguilds•succession–abiotic drivers, functional drivers
+describing host environment as first step towards understanding microbiomewithin/on 
+which “-omics”will be most informative to models?
+
+
+
+
+Rate of   genetic   variation   that   occurs   within   a   microbial   community   (within   a   host)   across time ○Model   organs/organoids   to   study   spatial-temporal   dynamics   of   human   microbiome 
+Environmental   drivers   of   a   “healthy”   human   microbiome 
+Describe   the   key   microbial   member   of   a   microbiome,   and   how   it   facilitates   the   proper metabolism   of   the   other   members   and   controls   the   abundance.   Is   there   even   a   key member   in   the   community   or   does   the   dominant   member   shift? 
+Evolutionary   relationship   between   key   microbial   genes
+
+
+
+Are there scalinglaws based on size of the microbiome area. For example,when looking at gut microbiomes, humans are larger than flies so how does that come into play? Also looking at more than cubic area but also surface area which may corollatebetter to the number of micro-niches. Also,could investigate scale theory by comparing different sizes of flies with close host phylogeny.Theory community assembly -deterministic vs. stochastic processes. importance of historical contingencygraph/network theory, metrics of community stability/robustness in the face of perturbationEvenness of the microbial communitydoes that correlateto function and how does evenness change in the face of infection or invaders. Isa more even community more resistant to invaders?How absolute abundance of microbiome also matters in host fitness.Understanding between phylogenetic,genomic, phenotypic traits and determinewhichare most predictive of microbiome makeup or function. Evaluate predictive understanding of differing trait-based, phylogenetic, phenotypic metrics for microbial community assembly processesCan estimates of dysbiosisbe used to predict disease states?
+
+Can we adapt ecological theory in microbiomes from macroecology? When would thismake sense or not -- scale of diversity, spatial scale, population sizes, horizontal genetransfer?> Can we use microbial systems to test ecological theory. -- invasion, priority effects,assembly processes, trophic levels.> Identify temporal and spatial scaling between host- and microbial communityresponses.> Can we predict higher order microbial interactions, and do they matter in real-worldenvironments?
+
+
+Incorporating microbiomes into quantitative genetics models of microevolution in hosts
+- how do microbiomes play into evolution of host traits? We have to consider
+microbiomes as simultaneously host “extended phenotype” and “environment”
+● Modeling resilience or stability of microbial communities: a “healthy” microbiome,
+returning to a baseline after perturbation
+● Succession and equilibrium: What are the factors that develop a community over time?
+○ Could be in response to perturbation (see resilience, above)
+○ Could be establishment of a new community
+● Seasonality of naturally occurring microbiomes (also Circadian rhythms within hosts)
+
+
+
+Functional overlap of the community in terms of synergistic activities and prediction of community members that co-occur and have positive outcome on the host/environment•Determining abundance and diversity effects since some of the current literature shows that there are responses that not only depend on the composition but also on the relative abundance of some microbes•Predicting synthetic communities that will have anexpected outcome on a specific host,especially for plants since we are interested in the microbiomes that increaseplant health and productivity•Establishing traitsor signature of adaptation and resiliencefor microbiomes, could be establish a library of life history traits that could be used to predict“stability”of a microbiome•What would be the impactof the different evolutionary forces on the stability and development of the microbiome•Temporal variation and successionalgradients on microbiomes since these could be host age relatedor metabolic shifts on the community•Transferability and/or inheritability of the microbiome, could we “breed”for specific groups of microbes to be part of the vertical transmission ofa species.  Also, could we predict the transferability and the outcomes of moving microbiomes across species
+
+
+
+appreciation of microbes as collections of functional units within distinct pathways,under different degrees of evolutionary selection and may facilitate different roles indifferent contexts (niches, habitats, etc.).  For example, a microbe that may be a‘cheater’ in one context may represent a driver in another, similar to how a microbemay need a particular functionality to gain access to a system but not for persistenceonce in the system.  Need more complex models to account for these linked (orun-linked) traits.
+adapting traditional ecological theories (i.e. Red Queen Hypothesis, invasion dynamics,etc.) to specifically take into account microbial distributions and traits, includingmulti-trophic interactions.
+Using integrative approach to describe microbiome data while adding additionalknowledge about transcriptomic/proteomic/metabolomic to better explain function ofmicrobial community in the system.
+New mathematical approaches to model complex community interactions
+
+Does evolution matter compared to ecology? And over what contexts and timescales might evolution matter (i.e. changes during a host’s lifetime, versus deep phylogenetic time)?What is the tempo and mode of evolution at different timescales?oWhat are the relative contributions of de novo evolution, horizontal gene transfer, and strain replacement and migration?oHow much genetic diversity is maintained in different species within a microbial community?To what extent have humans (and other organisms) co-evolved with their microbes, and at what timescales does this co-evolution tend to take place?How many stable states are present in a system?
+What are the effects of minor (i.e. diet) and major (i.e. antibiotics) perturbations?
+
+What are the determinants of resistance to change and resilience to major disturbances in the microbiome? What kinds of perturbations to a community can achieve a desired effect, i.e. elimination of C. difficile?What are the appropriate summary statistics for calculating and comparing useful features of a community?
+
+Depends on your system... for plants/animals: how does breeding drive the genotype andconsequently the microbiome, especially beneficial microbes? How does domestication impactthe microbiome? E.g., Wheat pre-1970s have myc response, newer varieties have lost thisresponse.Disturbance regime: harder for domesticated plants to maintain myc symbioses because ofpleiotropy with other traits under selection.Transitions between pathogens / mutualists dependent upon the environment and the hostgenotype. Abundance of the microbes important in terms of effects on the host.Diversity-function​: abundance, richness, evenness impacting interactions within microbiomeModeling microbial niche across multiple scales: single host cell to global biogeochem cycle.Incorporating environmental data (pH, water potential, etc) into these models. Co-occurrencesets of species within environments. Scaling across heterogenous environments from smaller tolarger scales
+
+Effects of stress on the microbiome: intermediate disturbance hyp, stress-gradient hyp. Howdoes stress impact BEF relationships & host effects? Link ecological theory to microbiomes.Rhizosphere: cropping history, current environment e.g., rainfall. GxGxExMDiet, host-host interactions in animals (and plants).Community assembly: selection, drift, mutation, contingency. Deterministic v random.Ecological v evolutionary
+
+
+
+
+How are communities assembling?•Can we change/predict how communities are forming?•How communities and their interactions with each other are responding to disturbance events, i.e., toxins, etc •Improve methods to estimate quantitative measurements•Population dynamics •How do microbiomes respond to stimuli?
+
+
+
+genetic diversity of microbial symbionts play an important role both in adaptation andin evolution of host organisms -changing composition of microbial symbionts can aid the holobiont in surviving,allowing time for the host genome to evolve to environmental stressors. -superorganism / supraorganism
+ We should aim to develop theory that guides expectations about:
+
+Under what conditions do stochasticity and historical contingency matter incommunity assembly (as opposed to deterministic outcomes)?2.Under what conditions does perturbation result in resilience of the communityand its time to recovery, as opposed to leading to alternative stable states orlegacy effects?3.Under what conditions does taxonomic composition most relate to the wholecommunity’s overall function (broadly defined)?4.Under what conditions are different interactions (e.g. phage-bacteria interactions,resource competition, etc.) more likely to be important in shaping microbiomes?5.How can we better constrain expected variation relative to effect sizes inmicrobiome experiments to design appropriate power analyses?
+
+Question seems biased toward lab / research topic studied Community assembly Disease –describe the healthy vs disease state microbiomes, predict what thecomposition would look under each, and model the microbe-microbe interactions and host-microbe interactionsClimate change –can we predict the robustness of microbial communities and their response to disturbance
+
+
+Community assembly
+Colonization / re-colonization (seed bank)
+Differentiating stress tolerators vs competitors
+Predicting complex functions: redox chemistry, secondary metabolite exchange
+Predicting core microbiomes
+Can you replace imagined theory / model with predictive AI tools? (computational evolution)
+When are rules applicable across many environments?
+When is a community at equilibrium? (temporal resolution)
+How does microbiome moderate host ecology
+Evolution of antibiotic resistance based on microbe-microbe interactions
+
+
+Ao eod goal should be the predictoo of microbiome fuoctoo from compositoo. However, this mar mar ofeo (alwars?) be a srstem specifc goal. •How do geoeral propertes of a microbiome (e.g., diversitr, ioteractoo oetwork structure) afect microbiome fuoctoos. Aod, specifcallr for applicatoos related to aoimal or plaot health, what propertes predict commuoitr resilieoce / stabilitr.•A “meta” theorr to help uoderstaod wheo the droamics of a srstem will oecessarilr be too idiosrocratc to geoeralize from would be useful
+
+Spatial explicit modeling -how well does community composition or membership predict productivity or any other ecosystem service.2.How does structure (e.g., composition, richness, membership, functional redundancy)and function change in response to the environment under stable regimes and following perturbations (e.g., diet, antibiotics, fecaltransplants, probiotics). Can a specific microbe be able to graft a host depending on the composition of the microbiome? What do patterns and periodicity of succession look like (i.e., seasonal succession)?3.Metapopulation dynamics would inform how microbiomes assemble across individuals within a species.4.Can we predict how a microbiome is transmitted (e.g., horizontal vs. vertical) across generations? Can we use microbiome composition to predict host fitness?What models of pathogen transmission can be applied to or re-purposed for the study of the
+
+microbiome. Do assembly rules for phylosymbiosis differ from those at play during vertical transmission?5.What is the functional basis for the composition of all the biomes
+
+Does a diverse environment equate to a diverse microbiome? We need comprehensivemodels to properly characterize the how microbiome composition relates to function, and how these communitieschangeover time. We need to ensure that longitudinal data are collected so that we can see if these shifts aresporadic, random, or truly directional in nature.We should also consider the strain-level variation in microbes in studies.
+
+How do microbiomes end up affecting the evolution of their hosts. Do some microbiomes give a host an advantage or disadvantage and is that a really strong effect? What is the advantage of having a microbiome vs not? Food animals are routinely dosed with antibiotics and that results in growth promotion of the animal. The microbiome in those cases is actually competing with the host for nutrient acquisition. So the influence of a microbiome is highly context specific and can end up being positive or negative based on the frame of reference, desired outcome, and intensity of the system.- Why so many microbial species persist in microbiomes even at extremely low levels of abundance, and even in extremely intensively managed or perturbed systems. Might these species play important roles all the time or may they only be necessary in some conditions? Also, might they just be really good at surviving and have nothing to do at all with microbiome functionality?- Is it really only important to look at the most abundant species to learn about the bulk of what a microbiome is doing (i.e do the top 50% of organisms by abundance account for 90% of system variance), or do you really need to know the dynamics, identity, and abundance of all microbes present to get a reasonably comprehensive picture of microbiome function?
+
+
+What are the contributions of microbial interactions? Are microbes interacting more actively (the interaction is evolved) or more passively (two microbes just happen to like the same substrate). We should be able to describe and predict active vs passive interaction, but is it possible?- Do keystone species exist? Do they have specific properties that are general for keystones or are there environmentally specific processes that make different species a keystone. - How do microbial communities durably transition between different states? We need to define the roles of microbes and any general rules that control weather a community will shift from one state to another or not.

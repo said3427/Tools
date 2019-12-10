@@ -1,9 +1,12 @@
-filename="Discussion1_Resume.txt"
+from wordcloud import WordCloud 
+import matplotlib.pyplot as plt
+from nltk.tokenize import word_tokenize
+
+filename="data/D1_summary.txt"
 file = open(filename, 'rt')
 text = file.read()
 file.close()
 # split into words
-from nltk.tokenize import word_tokenize
 tokens = word_tokenize(text)
 # convert to lower case
 tokens = [w.lower() for w in tokens]
@@ -18,16 +21,11 @@ from nltk.corpus import stopwords
 stop_words = set(stopwords.words('english'))
 words = [w for w in words if not w in stop_words]
 
-with open("Resume.txt",mode="w",encoding="utf-8") as myfile:
-    myfile.write(' '.join(words))
 
-
-textWord=open("Resume.txt").read() 
-wordcloud = WordCloud(max_font_size=50,background_color="white").generate(textWord)
+wordcloud = WordCloud(max_font_size=50,background_color="white").generate( " ".join(words))
 plt.figure()
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
 plt.show()
 image = wordcloud.to_image()
-textWord=open("Resumen.txt").read()
-image.save("Discussion1_summary_NoMicrobiome.png")
+image.save("fig/"filename+".png")
